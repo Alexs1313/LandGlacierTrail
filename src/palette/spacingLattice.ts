@@ -1,5 +1,5 @@
 export const spacingLattice = {
-  unitXs: 4,
+  unitXs: 4.2,
   unitSm: 8,
   unitMd: 12,
   unitLg: 16,
