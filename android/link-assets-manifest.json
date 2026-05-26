@@ -1,0 +1,109 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/BarlowCondensed-Black.ttf",
+      "sha1": "ca766f76ce5a40120b6e7d0e2f0d534699f57bb8"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Bold.ttf",
+      "sha1": "6262bcb13860d998f4f0ef6f24955015ba5c9fc8"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-ExtraBold.ttf",
+      "sha1": "ad26fc581156fee4f83113df5189016ac72a484b"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Medium.ttf",
+      "sha1": "97ca26fcb390d83da8a008d5bf085fd1277d4999"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Regular.ttf",
+      "sha1": "341759b9be0c543c624a7dfbd0b0063aa4b8480a"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-SemiBold.ttf",
+      "sha1": "465591c65008579e7b03792dc5598f384ca3cfd4"
+    },
+    {
+      "path": "assets/images/BreidarlonGlacierLagoon.png",
+      "sha1": "209dfd1764f85e657279cec0422ac54a2399a7e4"
+    },
+    {
+      "path": "assets/images/CrystalIceCaveArea.png",
+      "sha1": "94260b9912ebafd25f3632efd8de0f9a564f337f"
+    },
+    {
+      "path": "assets/images/DiamondBeach.png",
+      "sha1": "929b88b0d7ea866841ca2e661e0ce1de895153b5"
+    },
+    {
+      "path": "assets/images/DrangajokullGlacier.png",
+      "sha1": "99996aa424102f4168ba66ff72e4f7e72279503c"
+    },
+    {
+      "path": "assets/images/EyjafjallajokullGlacierView.png",
+      "sha1": "4477e54952bf615db147d47dfc1701a56a6f51a9"
+    },
+    {
+      "path": "assets/images/FjallsarlonGlacierLagoon.png",
+      "sha1": "85ebc3fd9798a161ab74dab89e717f6f80abf2fb"
+    },
+    {
+      "path": "assets/images/HeinabergslonGlacierLagoon.png",
+      "sha1": "60ac69f837bec1b83c6cc2a49080b9bd038c4c10"
+    },
+    {
+      "path": "assets/images/HoffellsjokullGlacierView.png",
+      "sha1": "13fa01405aefb42e2c49322ed6dac2d0560937f1"
+    },
+    {
+      "path": "assets/images/HofsjokullGlacier.png",
+      "sha1": "27c2618b613bffc55a0011bcd41c33aa6fda6c14"
+    },
+    {
+      "path": "assets/images/JokulsarlonGlacierLagoon.png",
+      "sha1": "ce26327b82e13fc0fb51fa08f48527b95c333860"
+    },
+    {
+      "path": "assets/images/KatlaIceCave.png",
+      "sha1": "bc09f5123ff8df156dee37c51fa2a9992f8e758d"
+    },
+    {
+      "path": "assets/images/LangjokullGlacier.png",
+      "sha1": "a5c4328a419b178a42ff800576938656663ceb58"
+    },
+    {
+      "path": "assets/images/LangjokullIceTunnel.png",
+      "sha1": "66d6e0ff392966ce644524a916f7d8784698c9ad"
+    },
+    {
+      "path": "assets/images/MyrdalsjokullGlacier.png",
+      "sha1": "749c921257e9b2c753dd41dd61f99be08ac1bf6c"
+    },
+    {
+      "path": "assets/images/SkaftafellIceCaveArea.png",
+      "sha1": "4f1c26a8cab556695cb30331a9f846f89eb3e02f"
+    },
+    {
+      "path": "assets/images/SkaftafellsjokullGlacierView.png",
+      "sha1": "f206cc2ef466419d6d53d90de7ddb706251cd942"
+    },
+    {
+      "path": "assets/images/SnaefellsjokullGlacier.png",
+      "sha1": "b9bc29ef89459b4809f449a290654768569e92ae"
+    },
+    {
+      "path": "assets/images/SolheimajokullGlacier.png",
+      "sha1": "1247136272c82de865b5b5e80b7aefbb95f83fa6"
+    },
+    {
+      "path": "assets/images/SvinafellsjokullGlacierView.png",
+      "sha1": "ab1d8329c601f024237da222ef2aeead62a7bfbb"
+    },
+    {
+      "path": "assets/images/VatnajokullIceCaveArea.png",
+      "sha1": "c7514dc7525d596a3d5029a6d6bc629ce4e67146"
+    }
+  ]
+}
