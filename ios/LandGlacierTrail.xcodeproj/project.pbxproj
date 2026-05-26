@@ -7,76 +7,114 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03E8FD7B259C4E5AAE864511 /* KatlaIceCave.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F6CEE5F322428D8D2E1FF3 /* KatlaIceCave.png */; };
-		09B104A327C049A194F48743 /* JokulsarlonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1527CE00BD3A4464B771730D /* JokulsarlonGlacierLagoon.png */; };
+		04EB3D28BD314262A9512D24 /* HofsjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = B00890B4171C435E8133DCC2 /* HofsjokullGlacier.png */; };
+		0702A5C753E54322A0C4678E /* KatlaIceCave.png in Resources */ = {isa = PBXBuildFile; fileRef = F55CC14E1C424B5DB571FE12 /* KatlaIceCave.png */; };
+		070C3DD65E6D41318F7322F1 /* tabGlyphArchive.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C55A2419B7D4664ABCF1B53 /* tabGlyphArchive.png */; };
+		0BDB59125B274F798D815605 /* guideFireUnderIce.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DF255A6677143B99A024823 /* guideFireUnderIce.png */; };
 		0C80B921A6F3F58F76C31292 /* libPods-LandGlacierTrail.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-LandGlacierTrail.a */; };
-		0F7F793F9C5747BDA82CA137 /* LangjokullIceTunnel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC1979A61C74D6E8D4DDE74 /* LangjokullIceTunnel.png */; };
+		1197A609F0054AFE9944773C /* VatnajokullIceCaveArea.png in Resources */ = {isa = PBXBuildFile; fileRef = 4044BF012D444E3B942E3F2E /* VatnajokullIceCaveArea.png */; };
+		1267482BC2934A758B0BB302 /* JokulsarlonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A50545278DB4E5A9DB3C89A /* JokulsarlonGlacierLagoon.png */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		1675137DDAE84F8784733DC2 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC97B09A63F4B149E2BDAA2 /* appIcon.png */; };
+		1C62B04DD3174F1692E2FC6B /* tabGlyphTerrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1F7AEBF1C14F03AC640CA0 /* tabGlyphTerrain.png */; };
+		1E6C65B6A8914C2A92AD384F /* LangjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C88241E6B134ADBADC3455C /* LangjokullGlacier.png */; };
+		256D6716D9734116829573D8 /* tabGlyphBrowse.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F42D0471F7342719117FED5 /* tabGlyphBrowse.png */; };
 		2ACDB66C506F46E4B83A4844 /* BarlowCondensed-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECBB06ADBDA442EE9B335E20 /* BarlowCondensed-SemiBold.ttf */; };
-		2B43662B9CBB42B6BD15B860 /* BreidarlonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 507F8AFF1472452E9C63F644 /* BreidarlonGlacierLagoon.png */; };
 		2C4918BD4D134516A6A2B468 /* BarlowCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3C5CF2DD80447DDB1CCE19D /* BarlowCondensed-ExtraBold.ttf */; };
-		323CF8BF706740CBAE0A1EE5 /* HoffellsjokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8C7010C15246609B3CEAA1 /* HoffellsjokullGlacierView.png */; };
-		3277927C9B134113BB8F0C08 /* SvinafellsjokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = 6841094F54B2442284F70118 /* SvinafellsjokullGlacierView.png */; };
-		4253C3688444473DBCAF7984 /* VatnajokullIceCaveArea.png in Resources */ = {isa = PBXBuildFile; fileRef = F9E39CD1156D4C2A992452C1 /* VatnajokullIceCaveArea.png */; };
-		4A449F613F8E400C84926288 /* DiamondBeach.png in Resources */ = {isa = PBXBuildFile; fileRef = B270AB4E26A04DFA8E967827 /* DiamondBeach.png */; };
+		2CA8721C5DD34F4F9B5C5052 /* onboardReveal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E7E2CD26E614214AC69F12A /* onboardReveal.png */; };
+		2D7F88EF66F44C278E74E167 /* onboardMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C6A8A28F93C4FFB9F389427 /* onboardMap.png */; };
+		3E24596A6F434DB2B33E0181 /* guidePreparing.png in Resources */ = {isa = PBXBuildFile; fileRef = 540C9A476855481EB1D296ED /* guidePreparing.png */; };
+		48A7F5800B04432E96FB04CA /* guideBlueIce.png in Resources */ = {isa = PBXBuildFile; fileRef = 9364F98970014083B1B31CE7 /* guideBlueIce.png */; };
+		4A21EBECB5424E2BB2977B9F /* SkaftafellsjokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = D468308F265E4A1AB7C05FC4 /* SkaftafellsjokullGlacierView.png */; };
 		5045011AEED04E558D66DBC2 /* BarlowCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD1A23B18A62414FB61E5403 /* BarlowCondensed-Medium.ttf */; };
+		52705F64EDD0435A9AE5F41C /* DrangajokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = 614A2A897C2E4AF4B6440095 /* DrangajokullGlacier.png */; };
+		58386EEA97F24E0C80A40381 /* guideGlacierLagoons.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB40C3EEC5742CBBD71B635 /* guideGlacierLagoons.png */; };
 		63A4D0EC22D54B528EE468ED /* BarlowCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50E69040B1B045049029A7B0 /* BarlowCondensed-Bold.ttf */; };
-		65D87FB102994CC3AF0530F4 /* EyjafjallajokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = 12AE496219CD444F8A837EE9 /* EyjafjallajokullGlacierView.png */; };
-		73FD044430F34CE0A84E70C0 /* HeinabergslonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = A958AA0446094C27AD2ED7F5 /* HeinabergslonGlacierLagoon.png */; };
+		6C28FAAB2E024C53874736C0 /* FjallsarlonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FD96485573456E9AC70EBC /* FjallsarlonGlacierLagoon.png */; };
+		71FC156001794626A10A61E6 /* LangjokullIceTunnel.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FABFD9A3F647179865E8CC /* LangjokullIceTunnel.png */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		7E5BCB9E57CB4D419A4EAADA /* BarlowCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD06676B0B894BA48F8FAA76 /* BarlowCondensed-Black.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		83BCF9E8CE454C3EBD625309 /* HofsjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = ECEAB6AF5D9844F29408C8DC /* HofsjokullGlacier.png */; };
-		9D90021942BA424792205B50 /* SkaftafellsjokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8545AA3FA2E34ECAB1B8190B /* SkaftafellsjokullGlacierView.png */; };
-		B2E458D02D1E44B0A0A9909A /* FjallsarlonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD637EC01F47CA9BF30597 /* FjallsarlonGlacierLagoon.png */; };
+		86251CC9A5144F61A15083E2 /* onboardRoutes.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8BD643576E4DE6951ED98E /* onboardRoutes.png */; };
+		8DA7C87B742D429E9EC97704 /* SolheimajokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = AF3CCADFE51042619194B8C4 /* SolheimajokullGlacier.png */; };
+		A24E0AA1472940FE9509C181 /* DiamondBeach.png in Resources */ = {isa = PBXBuildFile; fileRef = 99A7180EF13149AB8B2C111E /* DiamondBeach.png */; };
+		A41FB0C4500B4470AD7C1BAA /* onboardDiscover.png in Resources */ = {isa = PBXBuildFile; fileRef = 579877F8D9744D1D880A8416 /* onboardDiscover.png */; };
+		A8A457E07A0046FFBF31D05F /* EyjafjallajokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B1F7177FC66484585CD09BC /* EyjafjallajokullGlacierView.png */; };
+		AB09433225AF4CFB820F9C73 /* HeinabergslonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = A655D1B5600C444A95540D2D /* HeinabergslonGlacierLagoon.png */; };
+		ACDB42D37EF844CBAC25DA5F /* tabGlyphJournal.png in Resources */ = {isa = PBXBuildFile; fileRef = 49527DA894BA4DBFB72D831F /* tabGlyphJournal.png */; };
+		AD100A6459574C4ABB803650 /* SvinafellsjokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = 915D45578AC044BDBB50CC0D /* SvinafellsjokullGlacierView.png */; };
+		B1316E81A884445F925BC6F9 /* MyrdalsjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = 011F5172C8A94C648691EB5C /* MyrdalsjokullGlacier.png */; };
 		B847606D136447C7B14C8BD7 /* BarlowCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16BBA777663A4D2683EE639B /* BarlowCondensed-Regular.ttf */; };
-		BF814C31BD4944328A6AB9CD /* LangjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = 96910FC5FD1C486D8A69975E /* LangjokullGlacier.png */; };
+		B9F6911EA9CD4ED2B10CE941 /* tabGlyphReveal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DB5A17DFEF64BE29D517E0A /* tabGlyphReveal.png */; };
+		BF198E2AFEC1459483363871 /* loader_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F932277F1CA41B5AAF3FF43 /* loader_background.png */; };
+		C1C7AA60592147EB8732376C /* guideGlacierCaves.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FBF4F55B084FC694D07629 /* guideGlacierCaves.png */; };
+		C978A55B7EB44B6AA026B405 /* BreidarlonGlacierLagoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 011BD72634554B7FA4D959C7 /* BreidarlonGlacierLagoon.png */; };
+		CED59CE03E49451AAC84CDFF /* nosaved.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC7D7BFC6DD40DAB98D8B8E /* nosaved.png */; };
+		CF501E032D00495ABD62D5EC /* HoffellsjokullGlacierView.png in Resources */ = {isa = PBXBuildFile; fileRef = F928BE12F74C4BEEBA55FA8B /* HoffellsjokullGlacierView.png */; };
+		D10EDF34383841C8A57A06B6 /* SkaftafellIceCaveArea.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B50287BD6FA4A41ACADABA8 /* SkaftafellIceCaveArea.png */; };
 		D37E717BBA3B24464851EC31 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		D3DFD1C64D1B4EFFB709C06A /* SnaefellsjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CAFF7B347CB43CB80C300C6 /* SnaefellsjokullGlacier.png */; };
-		D6A8A725AAA4467A9CF533EB /* CrystalIceCaveArea.png in Resources */ = {isa = PBXBuildFile; fileRef = A921705E59CD496AB115F5C8 /* CrystalIceCaveArea.png */; };
-		D6D028F6F1EC4F9FB46AF88A /* MyrdalsjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B443BF67EA43FA876B358B /* MyrdalsjokullGlacier.png */; };
-		EE517743B5EA4452B8F5D089 /* SolheimajokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = CF547645794A461B82BB218E /* SolheimajokullGlacier.png */; };
-		F188EEDC07FF45D598AE0374 /* DrangajokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = 543A849B86D44E55892F392D /* DrangajokullGlacier.png */; };
-		F9C2268CA8074AC3A4751D7F /* SkaftafellIceCaveArea.png in Resources */ = {isa = PBXBuildFile; fileRef = B05AA07F480145DD8DA450B7 /* SkaftafellIceCaveArea.png */; };
+		D8DEFBA8E83C4D2E88866C7E /* CrystalIceCaveArea.png in Resources */ = {isa = PBXBuildFile; fileRef = F957FAB16FBA47BEA2A243C8 /* CrystalIceCaveArea.png */; };
+		E63338C6EE58496BB69F0044 /* mainbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 402219E5A0C04087BD14B4BB /* mainbackground.png */; };
+		EE2947330A8A4E97A518FE8D /* SnaefellsjokullGlacier.png in Resources */ = {isa = PBXBuildFile; fileRef = E39DA6B00FD34C00803221C1 /* SnaefellsjokullGlacier.png */; };
+		F4A2B66B974948079ABE15FB /* onboardArchive.png in Resources */ = {isa = PBXBuildFile; fileRef = 00382EB758E34715980857CD /* onboardArchive.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12AE496219CD444F8A837EE9 /* EyjafjallajokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EyjafjallajokullGlacierView.png; path = ../assets/images/EyjafjallajokullGlacierView.png; sourceTree = "<group>"; };
+		00382EB758E34715980857CD /* onboardArchive.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = onboardArchive.png; path = ../assets/images/onboardArchive.png; sourceTree = "<group>"; };
+		011BD72634554B7FA4D959C7 /* BreidarlonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BreidarlonGlacierLagoon.png; path = ../assets/images/BreidarlonGlacierLagoon.png; sourceTree = "<group>"; };
+		011F5172C8A94C648691EB5C /* MyrdalsjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MyrdalsjokullGlacier.png; path = ../assets/images/MyrdalsjokullGlacier.png; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* LandGlacierTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandGlacierTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LandGlacierTrail/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LandGlacierTrail/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = LandGlacierTrail/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		1527CE00BD3A4464B771730D /* JokulsarlonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = JokulsarlonGlacierLagoon.png; path = ../assets/images/JokulsarlonGlacierLagoon.png; sourceTree = "<group>"; };
 		16BBA777663A4D2683EE639B /* BarlowCondensed-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Regular.ttf"; path = "../assets/fonts/BarlowCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		24FBF4F55B084FC694D07629 /* guideGlacierCaves.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = guideGlacierCaves.png; path = ../assets/images/guideGlacierCaves.png; sourceTree = "<group>"; };
+		2E8BD643576E4DE6951ED98E /* onboardRoutes.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = onboardRoutes.png; path = ../assets/images/onboardRoutes.png; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-LandGlacierTrail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandGlacierTrail.debug.xcconfig"; path = "Target Support Files/Pods-LandGlacierTrail/Pods-LandGlacierTrail.debug.xcconfig"; sourceTree = "<group>"; };
-		3C8C7010C15246609B3CEAA1 /* HoffellsjokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HoffellsjokullGlacierView.png; path = ../assets/images/HoffellsjokullGlacierView.png; sourceTree = "<group>"; };
-		49F6CEE5F322428D8D2E1FF3 /* KatlaIceCave.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = KatlaIceCave.png; path = ../assets/images/KatlaIceCave.png; sourceTree = "<group>"; };
-		4CAFF7B347CB43CB80C300C6 /* SnaefellsjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SnaefellsjokullGlacier.png; path = ../assets/images/SnaefellsjokullGlacier.png; sourceTree = "<group>"; };
-		4CC1979A61C74D6E8D4DDE74 /* LangjokullIceTunnel.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LangjokullIceTunnel.png; path = ../assets/images/LangjokullIceTunnel.png; sourceTree = "<group>"; };
-		507F8AFF1472452E9C63F644 /* BreidarlonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BreidarlonGlacierLagoon.png; path = ../assets/images/BreidarlonGlacierLagoon.png; sourceTree = "<group>"; };
+		402219E5A0C04087BD14B4BB /* mainbackground.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = mainbackground.png; path = ../assets/images/mainbackground.png; sourceTree = "<group>"; };
+		4044BF012D444E3B942E3F2E /* VatnajokullIceCaveArea.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = VatnajokullIceCaveArea.png; path = ../assets/images/VatnajokullIceCaveArea.png; sourceTree = "<group>"; };
+		49527DA894BA4DBFB72D831F /* tabGlyphJournal.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = tabGlyphJournal.png; path = ../assets/images/tabGlyphJournal.png; sourceTree = "<group>"; };
+		4C88241E6B134ADBADC3455C /* LangjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = LangjokullGlacier.png; path = ../assets/images/LangjokullGlacier.png; sourceTree = "<group>"; };
+		4F42D0471F7342719117FED5 /* tabGlyphBrowse.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = tabGlyphBrowse.png; path = ../assets/images/tabGlyphBrowse.png; sourceTree = "<group>"; };
 		50E69040B1B045049029A7B0 /* BarlowCondensed-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Bold.ttf"; path = "../assets/fonts/BarlowCondensed-Bold.ttf"; sourceTree = "<group>"; };
-		543A849B86D44E55892F392D /* DrangajokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = DrangajokullGlacier.png; path = ../assets/images/DrangajokullGlacier.png; sourceTree = "<group>"; };
+		540C9A476855481EB1D296ED /* guidePreparing.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = guidePreparing.png; path = ../assets/images/guidePreparing.png; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-LandGlacierTrail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandGlacierTrail.release.xcconfig"; path = "Target Support Files/Pods-LandGlacierTrail/Pods-LandGlacierTrail.release.xcconfig"; sourceTree = "<group>"; };
+		579877F8D9744D1D880A8416 /* onboardDiscover.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = onboardDiscover.png; path = ../assets/images/onboardDiscover.png; sourceTree = "<group>"; };
+		5A50545278DB4E5A9DB3C89A /* JokulsarlonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = JokulsarlonGlacierLagoon.png; path = ../assets/images/JokulsarlonGlacierLagoon.png; sourceTree = "<group>"; };
+		5AC7D7BFC6DD40DAB98D8B8E /* nosaved.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = nosaved.png; path = ../assets/images/nosaved.png; sourceTree = "<group>"; };
+		5B1F7177FC66484585CD09BC /* EyjafjallajokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = EyjafjallajokullGlacierView.png; path = ../assets/images/EyjafjallajokullGlacierView.png; sourceTree = "<group>"; };
+		5C55A2419B7D4664ABCF1B53 /* tabGlyphArchive.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = tabGlyphArchive.png; path = ../assets/images/tabGlyphArchive.png; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-LandGlacierTrail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LandGlacierTrail.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EAD637EC01F47CA9BF30597 /* FjallsarlonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FjallsarlonGlacierLagoon.png; path = ../assets/images/FjallsarlonGlacierLagoon.png; sourceTree = "<group>"; };
-		6841094F54B2442284F70118 /* SvinafellsjokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SvinafellsjokullGlacierView.png; path = ../assets/images/SvinafellsjokullGlacierView.png; sourceTree = "<group>"; };
+		5DF255A6677143B99A024823 /* guideFireUnderIce.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = guideFireUnderIce.png; path = ../assets/images/guideFireUnderIce.png; sourceTree = "<group>"; };
+		5F932277F1CA41B5AAF3FF43 /* loader_background.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = loader_background.png; path = ../assets/images/loader_background.png; sourceTree = "<group>"; };
+		614A2A897C2E4AF4B6440095 /* DrangajokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = DrangajokullGlacier.png; path = ../assets/images/DrangajokullGlacier.png; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = LandGlacierTrail/AppDelegate.swift; sourceTree = "<group>"; };
+		7C6A8A28F93C4FFB9F389427 /* onboardMap.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = onboardMap.png; path = ../assets/images/onboardMap.png; sourceTree = "<group>"; };
+		7D1F7AEBF1C14F03AC640CA0 /* tabGlyphTerrain.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = tabGlyphTerrain.png; path = ../assets/images/tabGlyphTerrain.png; sourceTree = "<group>"; };
+		7DB5A17DFEF64BE29D517E0A /* tabGlyphReveal.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = tabGlyphReveal.png; path = ../assets/images/tabGlyphReveal.png; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LandGlacierTrail/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8545AA3FA2E34ECAB1B8190B /* SkaftafellsjokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SkaftafellsjokullGlacierView.png; path = ../assets/images/SkaftafellsjokullGlacierView.png; sourceTree = "<group>"; };
-		96910FC5FD1C486D8A69975E /* LangjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LangjokullGlacier.png; path = ../assets/images/LangjokullGlacier.png; sourceTree = "<group>"; };
-		A921705E59CD496AB115F5C8 /* CrystalIceCaveArea.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = CrystalIceCaveArea.png; path = ../assets/images/CrystalIceCaveArea.png; sourceTree = "<group>"; };
-		A958AA0446094C27AD2ED7F5 /* HeinabergslonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HeinabergslonGlacierLagoon.png; path = ../assets/images/HeinabergslonGlacierLagoon.png; sourceTree = "<group>"; };
-		B05AA07F480145DD8DA450B7 /* SkaftafellIceCaveArea.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SkaftafellIceCaveArea.png; path = ../assets/images/SkaftafellIceCaveArea.png; sourceTree = "<group>"; };
-		B270AB4E26A04DFA8E967827 /* DiamondBeach.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = DiamondBeach.png; path = ../assets/images/DiamondBeach.png; sourceTree = "<group>"; };
+		8FB40C3EEC5742CBBD71B635 /* guideGlacierLagoons.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = guideGlacierLagoons.png; path = ../assets/images/guideGlacierLagoons.png; sourceTree = "<group>"; };
+		915D45578AC044BDBB50CC0D /* SvinafellsjokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SvinafellsjokullGlacierView.png; path = ../assets/images/SvinafellsjokullGlacierView.png; sourceTree = "<group>"; };
+		9364F98970014083B1B31CE7 /* guideBlueIce.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = guideBlueIce.png; path = ../assets/images/guideBlueIce.png; sourceTree = "<group>"; };
+		99A7180EF13149AB8B2C111E /* DiamondBeach.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = DiamondBeach.png; path = ../assets/images/DiamondBeach.png; sourceTree = "<group>"; };
+		9B50287BD6FA4A41ACADABA8 /* SkaftafellIceCaveArea.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SkaftafellIceCaveArea.png; path = ../assets/images/SkaftafellIceCaveArea.png; sourceTree = "<group>"; };
+		9E7E2CD26E614214AC69F12A /* onboardReveal.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = onboardReveal.png; path = ../assets/images/onboardReveal.png; sourceTree = "<group>"; };
+		A655D1B5600C444A95540D2D /* HeinabergslonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = HeinabergslonGlacierLagoon.png; path = ../assets/images/HeinabergslonGlacierLagoon.png; sourceTree = "<group>"; };
+		AEC97B09A63F4B149E2BDAA2 /* appIcon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = appIcon.png; path = ../assets/images/appIcon.png; sourceTree = "<group>"; };
+		AF3CCADFE51042619194B8C4 /* SolheimajokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SolheimajokullGlacier.png; path = ../assets/images/SolheimajokullGlacier.png; sourceTree = "<group>"; };
+		B00890B4171C435E8133DCC2 /* HofsjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = HofsjokullGlacier.png; path = ../assets/images/HofsjokullGlacier.png; sourceTree = "<group>"; };
 		BD06676B0B894BA48F8FAA76 /* BarlowCondensed-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Black.ttf"; path = "../assets/fonts/BarlowCondensed-Black.ttf"; sourceTree = "<group>"; };
-		C2B443BF67EA43FA876B358B /* MyrdalsjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MyrdalsjokullGlacier.png; path = ../assets/images/MyrdalsjokullGlacier.png; sourceTree = "<group>"; };
+		C9FD96485573456E9AC70EBC /* FjallsarlonGlacierLagoon.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FjallsarlonGlacierLagoon.png; path = ../assets/images/FjallsarlonGlacierLagoon.png; sourceTree = "<group>"; };
 		CD1A23B18A62414FB61E5403 /* BarlowCondensed-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-Medium.ttf"; path = "../assets/fonts/BarlowCondensed-Medium.ttf"; sourceTree = "<group>"; };
-		CF547645794A461B82BB218E /* SolheimajokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SolheimajokullGlacier.png; path = ../assets/images/SolheimajokullGlacier.png; sourceTree = "<group>"; };
+		D468308F265E4A1AB7C05FC4 /* SkaftafellsjokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SkaftafellsjokullGlacierView.png; path = ../assets/images/SkaftafellsjokullGlacierView.png; sourceTree = "<group>"; };
+		E39DA6B00FD34C00803221C1 /* SnaefellsjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SnaefellsjokullGlacier.png; path = ../assets/images/SnaefellsjokullGlacier.png; sourceTree = "<group>"; };
 		ECBB06ADBDA442EE9B335E20 /* BarlowCondensed-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-SemiBold.ttf"; path = "../assets/fonts/BarlowCondensed-SemiBold.ttf"; sourceTree = "<group>"; };
-		ECEAB6AF5D9844F29408C8DC /* HofsjokullGlacier.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = HofsjokullGlacier.png; path = ../assets/images/HofsjokullGlacier.png; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F3C5CF2DD80447DDB1CCE19D /* BarlowCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BarlowCondensed-ExtraBold.ttf"; path = "../assets/fonts/BarlowCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
-		F9E39CD1156D4C2A992452C1 /* VatnajokullIceCaveArea.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = VatnajokullIceCaveArea.png; path = ../assets/images/VatnajokullIceCaveArea.png; sourceTree = "<group>"; };
+		F4FABFD9A3F647179865E8CC /* LangjokullIceTunnel.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = LangjokullIceTunnel.png; path = ../assets/images/LangjokullIceTunnel.png; sourceTree = "<group>"; };
+		F55CC14E1C424B5DB571FE12 /* KatlaIceCave.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = KatlaIceCave.png; path = ../assets/images/KatlaIceCave.png; sourceTree = "<group>"; };
+		F928BE12F74C4BEEBA55FA8B /* HoffellsjokullGlacierView.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = HoffellsjokullGlacierView.png; path = ../assets/images/HoffellsjokullGlacierView.png; sourceTree = "<group>"; };
+		F957FAB16FBA47BEA2A243C8 /* CrystalIceCaveArea.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = CrystalIceCaveArea.png; path = ../assets/images/CrystalIceCaveArea.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,26 +159,45 @@
 				16BBA777663A4D2683EE639B /* BarlowCondensed-Regular.ttf */,
 				ECBB06ADBDA442EE9B335E20 /* BarlowCondensed-SemiBold.ttf */,
 				F3C5CF2DD80447DDB1CCE19D /* BarlowCondensed-ExtraBold.ttf */,
-				B05AA07F480145DD8DA450B7 /* SkaftafellIceCaveArea.png */,
-				6841094F54B2442284F70118 /* SvinafellsjokullGlacierView.png */,
-				A958AA0446094C27AD2ED7F5 /* HeinabergslonGlacierLagoon.png */,
-				3C8C7010C15246609B3CEAA1 /* HoffellsjokullGlacierView.png */,
-				4CC1979A61C74D6E8D4DDE74 /* LangjokullIceTunnel.png */,
-				1527CE00BD3A4464B771730D /* JokulsarlonGlacierLagoon.png */,
-				507F8AFF1472452E9C63F644 /* BreidarlonGlacierLagoon.png */,
-				ECEAB6AF5D9844F29408C8DC /* HofsjokullGlacier.png */,
-				F9E39CD1156D4C2A992452C1 /* VatnajokullIceCaveArea.png */,
-				CF547645794A461B82BB218E /* SolheimajokullGlacier.png */,
-				8545AA3FA2E34ECAB1B8190B /* SkaftafellsjokullGlacierView.png */,
-				4CAFF7B347CB43CB80C300C6 /* SnaefellsjokullGlacier.png */,
-				B270AB4E26A04DFA8E967827 /* DiamondBeach.png */,
-				96910FC5FD1C486D8A69975E /* LangjokullGlacier.png */,
-				12AE496219CD444F8A837EE9 /* EyjafjallajokullGlacierView.png */,
-				5EAD637EC01F47CA9BF30597 /* FjallsarlonGlacierLagoon.png */,
-				543A849B86D44E55892F392D /* DrangajokullGlacier.png */,
-				49F6CEE5F322428D8D2E1FF3 /* KatlaIceCave.png */,
-				A921705E59CD496AB115F5C8 /* CrystalIceCaveArea.png */,
-				C2B443BF67EA43FA876B358B /* MyrdalsjokullGlacier.png */,
+				9B50287BD6FA4A41ACADABA8 /* SkaftafellIceCaveArea.png */,
+				00382EB758E34715980857CD /* onboardArchive.png */,
+				915D45578AC044BDBB50CC0D /* SvinafellsjokullGlacierView.png */,
+				A655D1B5600C444A95540D2D /* HeinabergslonGlacierLagoon.png */,
+				F928BE12F74C4BEEBA55FA8B /* HoffellsjokullGlacierView.png */,
+				49527DA894BA4DBFB72D831F /* tabGlyphJournal.png */,
+				9364F98970014083B1B31CE7 /* guideBlueIce.png */,
+				F4FABFD9A3F647179865E8CC /* LangjokullIceTunnel.png */,
+				540C9A476855481EB1D296ED /* guidePreparing.png */,
+				5A50545278DB4E5A9DB3C89A /* JokulsarlonGlacierLagoon.png */,
+				011BD72634554B7FA4D959C7 /* BreidarlonGlacierLagoon.png */,
+				B00890B4171C435E8133DCC2 /* HofsjokullGlacier.png */,
+				7C6A8A28F93C4FFB9F389427 /* onboardMap.png */,
+				4044BF012D444E3B942E3F2E /* VatnajokullIceCaveArea.png */,
+				AF3CCADFE51042619194B8C4 /* SolheimajokullGlacier.png */,
+				8FB40C3EEC5742CBBD71B635 /* guideGlacierLagoons.png */,
+				5AC7D7BFC6DD40DAB98D8B8E /* nosaved.png */,
+				D468308F265E4A1AB7C05FC4 /* SkaftafellsjokullGlacierView.png */,
+				E39DA6B00FD34C00803221C1 /* SnaefellsjokullGlacier.png */,
+				99A7180EF13149AB8B2C111E /* DiamondBeach.png */,
+				7D1F7AEBF1C14F03AC640CA0 /* tabGlyphTerrain.png */,
+				4C88241E6B134ADBADC3455C /* LangjokullGlacier.png */,
+				2E8BD643576E4DE6951ED98E /* onboardRoutes.png */,
+				5DF255A6677143B99A024823 /* guideFireUnderIce.png */,
+				5F932277F1CA41B5AAF3FF43 /* loader_background.png */,
+				579877F8D9744D1D880A8416 /* onboardDiscover.png */,
+				24FBF4F55B084FC694D07629 /* guideGlacierCaves.png */,
+				402219E5A0C04087BD14B4BB /* mainbackground.png */,
+				AEC97B09A63F4B149E2BDAA2 /* appIcon.png */,
+				5C55A2419B7D4664ABCF1B53 /* tabGlyphArchive.png */,
+				5B1F7177FC66484585CD09BC /* EyjafjallajokullGlacierView.png */,
+				C9FD96485573456E9AC70EBC /* FjallsarlonGlacierLagoon.png */,
+				614A2A897C2E4AF4B6440095 /* DrangajokullGlacier.png */,
+				F55CC14E1C424B5DB571FE12 /* KatlaIceCave.png */,
+				4F42D0471F7342719117FED5 /* tabGlyphBrowse.png */,
+				F957FAB16FBA47BEA2A243C8 /* CrystalIceCaveArea.png */,
+				9E7E2CD26E614214AC69F12A /* onboardReveal.png */,
+				011F5172C8A94C648691EB5C /* MyrdalsjokullGlacier.png */,
+				7DB5A17DFEF64BE29D517E0A /* tabGlyphReveal.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -253,26 +310,45 @@
 				B847606D136447C7B14C8BD7 /* BarlowCondensed-Regular.ttf in Resources */,
 				2ACDB66C506F46E4B83A4844 /* BarlowCondensed-SemiBold.ttf in Resources */,
 				2C4918BD4D134516A6A2B468 /* BarlowCondensed-ExtraBold.ttf in Resources */,
-				F9C2268CA8074AC3A4751D7F /* SkaftafellIceCaveArea.png in Resources */,
-				3277927C9B134113BB8F0C08 /* SvinafellsjokullGlacierView.png in Resources */,
-				73FD044430F34CE0A84E70C0 /* HeinabergslonGlacierLagoon.png in Resources */,
-				323CF8BF706740CBAE0A1EE5 /* HoffellsjokullGlacierView.png in Resources */,
-				0F7F793F9C5747BDA82CA137 /* LangjokullIceTunnel.png in Resources */,
-				09B104A327C049A194F48743 /* JokulsarlonGlacierLagoon.png in Resources */,
-				2B43662B9CBB42B6BD15B860 /* BreidarlonGlacierLagoon.png in Resources */,
-				83BCF9E8CE454C3EBD625309 /* HofsjokullGlacier.png in Resources */,
-				4253C3688444473DBCAF7984 /* VatnajokullIceCaveArea.png in Resources */,
-				EE517743B5EA4452B8F5D089 /* SolheimajokullGlacier.png in Resources */,
-				9D90021942BA424792205B50 /* SkaftafellsjokullGlacierView.png in Resources */,
-				D3DFD1C64D1B4EFFB709C06A /* SnaefellsjokullGlacier.png in Resources */,
-				4A449F613F8E400C84926288 /* DiamondBeach.png in Resources */,
-				BF814C31BD4944328A6AB9CD /* LangjokullGlacier.png in Resources */,
-				65D87FB102994CC3AF0530F4 /* EyjafjallajokullGlacierView.png in Resources */,
-				B2E458D02D1E44B0A0A9909A /* FjallsarlonGlacierLagoon.png in Resources */,
-				F188EEDC07FF45D598AE0374 /* DrangajokullGlacier.png in Resources */,
-				03E8FD7B259C4E5AAE864511 /* KatlaIceCave.png in Resources */,
-				D6A8A725AAA4467A9CF533EB /* CrystalIceCaveArea.png in Resources */,
-				D6D028F6F1EC4F9FB46AF88A /* MyrdalsjokullGlacier.png in Resources */,
+				D10EDF34383841C8A57A06B6 /* SkaftafellIceCaveArea.png in Resources */,
+				F4A2B66B974948079ABE15FB /* onboardArchive.png in Resources */,
+				AD100A6459574C4ABB803650 /* SvinafellsjokullGlacierView.png in Resources */,
+				AB09433225AF4CFB820F9C73 /* HeinabergslonGlacierLagoon.png in Resources */,
+				CF501E032D00495ABD62D5EC /* HoffellsjokullGlacierView.png in Resources */,
+				ACDB42D37EF844CBAC25DA5F /* tabGlyphJournal.png in Resources */,
+				48A7F5800B04432E96FB04CA /* guideBlueIce.png in Resources */,
+				71FC156001794626A10A61E6 /* LangjokullIceTunnel.png in Resources */,
+				3E24596A6F434DB2B33E0181 /* guidePreparing.png in Resources */,
+				1267482BC2934A758B0BB302 /* JokulsarlonGlacierLagoon.png in Resources */,
+				C978A55B7EB44B6AA026B405 /* BreidarlonGlacierLagoon.png in Resources */,
+				04EB3D28BD314262A9512D24 /* HofsjokullGlacier.png in Resources */,
+				2D7F88EF66F44C278E74E167 /* onboardMap.png in Resources */,
+				1197A609F0054AFE9944773C /* VatnajokullIceCaveArea.png in Resources */,
+				8DA7C87B742D429E9EC97704 /* SolheimajokullGlacier.png in Resources */,
+				58386EEA97F24E0C80A40381 /* guideGlacierLagoons.png in Resources */,
+				CED59CE03E49451AAC84CDFF /* nosaved.png in Resources */,
+				4A21EBECB5424E2BB2977B9F /* SkaftafellsjokullGlacierView.png in Resources */,
+				EE2947330A8A4E97A518FE8D /* SnaefellsjokullGlacier.png in Resources */,
+				A24E0AA1472940FE9509C181 /* DiamondBeach.png in Resources */,
+				1C62B04DD3174F1692E2FC6B /* tabGlyphTerrain.png in Resources */,
+				1E6C65B6A8914C2A92AD384F /* LangjokullGlacier.png in Resources */,
+				86251CC9A5144F61A15083E2 /* onboardRoutes.png in Resources */,
+				0BDB59125B274F798D815605 /* guideFireUnderIce.png in Resources */,
+				BF198E2AFEC1459483363871 /* loader_background.png in Resources */,
+				A41FB0C4500B4470AD7C1BAA /* onboardDiscover.png in Resources */,
+				C1C7AA60592147EB8732376C /* guideGlacierCaves.png in Resources */,
+				E63338C6EE58496BB69F0044 /* mainbackground.png in Resources */,
+				1675137DDAE84F8784733DC2 /* appIcon.png in Resources */,
+				070C3DD65E6D41318F7322F1 /* tabGlyphArchive.png in Resources */,
+				A8A457E07A0046FFBF31D05F /* EyjafjallajokullGlacierView.png in Resources */,
+				6C28FAAB2E024C53874736C0 /* FjallsarlonGlacierLagoon.png in Resources */,
+				52705F64EDD0435A9AE5F41C /* DrangajokullGlacier.png in Resources */,
+				0702A5C753E54322A0C4678E /* KatlaIceCave.png in Resources */,
+				256D6716D9734116829573D8 /* tabGlyphBrowse.png in Resources */,
+				D8DEFBA8E83C4D2E88866C7E /* CrystalIceCaveArea.png in Resources */,
+				2CA8721C5DD34F4F9B5C5052 /* onboardReveal.png in Resources */,
+				B1316E81A884445F925BC6F9 /* MyrdalsjokullGlacier.png in Resources */,
+				B9F6911EA9CD4ED2B10CE941 /* tabGlyphReveal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,13 +379,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LandGlacierTrail/Pods-LandGlacierTrail-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LandGlacierTrail/Pods-LandGlacierTrail-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -346,13 +418,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LandGlacierTrail/Pods-LandGlacierTrail-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LandGlacierTrail/Pods-LandGlacierTrail-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -506,7 +574,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -575,7 +646,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
