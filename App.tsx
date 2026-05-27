@@ -1,12 +1,12 @@
 import React from 'react';
 
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {MainRoutesStack} from './src/navigation/MainRoutesStack';
+import {LandGllacrtraillMainRoutesStack} from './LandGllacrtraill/landGllacrtraillroutts/LandGllacrtraillMainRoutesStack';
 
 function App(): React.JSX.Element {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
-      <MainRoutesStack />
+      <LandGllacrtraillMainRoutesStack />
     </GestureHandlerRootView>
   );
 }

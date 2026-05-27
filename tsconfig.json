@@ -4,8 +4,8 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["LandGllacrtraill/*"]
     }
   },
-  "include": ["src/**/*", "App.tsx", "index.js"]
+  "include": ["LandGllacrtraill/**/*", "App.tsx", "index.js"]
 }

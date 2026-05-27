@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.dsfnnaskldsdvsd.asdjasndkasjdn</string>
+	<string>com.adsfkjjk.sauqwyeuy</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -32,7 +32,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location is used to show nearby glaciers on the map.</string>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>BarlowCondensed-Bold.ttf</string>
