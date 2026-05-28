@@ -1,11 +1,16 @@
 import React from 'react';
-import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import type {StackScreenProps} from '@react-navigation/stack';
 import {resolveSafetyByKey} from '../landGllacrtraillcpnnts/LandGllacrtraillguideCatalog';
 import type {RootStackParamList} from '../landGllacrtraillroutts/LandGllacrtrailltypes';
-import {
-  typographyMold,
-} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
+import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
 
 type Props = StackScreenProps<RootStackParamList, 'GuideSafety'>;
 
@@ -22,7 +27,8 @@ export function LandGllacrtraillGuideSafetyScreen({navigation, route}: Props) {
     );
   }
 
-  const landGllacrtraillParagraphs = landGllacrtraillNote.bodyContent.split('\n\n');
+  const landGllacrtraillParagraphs =
+    landGllacrtraillNote.bodyContent.split('\n\n');
 
   return (
     <View style={styles.landGllacrtraillRoot}>
@@ -32,17 +38,27 @@ export function LandGllacrtraillGuideSafetyScreen({navigation, route}: Props) {
         <Pressable
           onPress={() => navigation.goBack()}
           style={styles.landGllacrtraillRoundControl}>
-          <Text style={styles.landGllacrtraillRoundControlIcon}>←</Text>
+          <Text
+            style={[
+              styles.landGllacrtraillRoundControlIcon,
+              Platform.OS === 'android' && {bottom: 4},
+            ]}>
+            ←
+          </Text>
         </Pressable>
 
         <View style={styles.landGllacrtraillSafetyHeader}>
           <View style={styles.landGllacrtraillShieldWrap}>
             <Text style={styles.landGllacrtraillShield}>🛡</Text>
           </View>
-          <Text style={styles.landGllacrtraillSafetyLabel}>SAFETY INFORMATION</Text>
+          <Text style={styles.landGllacrtraillSafetyLabel}>
+            SAFETY INFORMATION
+          </Text>
         </View>
 
-        <Text style={styles.landGllacrtraillTitle}>{landGllacrtraillNote.title}</Text>
+        <Text style={styles.landGllacrtraillTitle}>
+          {landGllacrtraillNote.title}
+        </Text>
         <View style={styles.landGllacrtraillDivider} />
 
         {landGllacrtraillParagraphs.map((paragraph, index) => (

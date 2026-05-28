@@ -28,6 +28,7 @@ import type {
   FilterSegment,
   FormationEntry,
 } from '../landGllacrtraillcpnnts/LandGllacrtraillentrySchema';
+import Orientation from 'react-native-orientation-locker';
 
 const ICELAND_REGION: Region = {
   latitude: 64.75,
@@ -66,7 +67,9 @@ export function LandGllacrtraillMapPanel() {
     }
     return (
       resolveEntryByKey(selectedKey) ??
-      landGllacrtraillVisibleLocations.find(item => item.entryKey === selectedKey)
+      landGllacrtraillVisibleLocations.find(
+        item => item.entryKey === selectedKey,
+      )
     );
   }, [selectedKey, landGllacrtraillVisibleLocations]);
 
@@ -82,23 +85,28 @@ export function LandGllacrtraillMapPanel() {
   useEffect(() => {
     if (
       selectedKey &&
-      !landGllacrtraillVisibleLocations.some(item => item.entryKey === selectedKey)
+      !landGllacrtraillVisibleLocations.some(
+        item => item.entryKey === selectedKey,
+      )
     ) {
       setSelectedKey(null);
     }
   }, [selectedKey, landGllacrtraillVisibleLocations]);
 
-  const landGllacrtraillFocusLocation = useCallback((landGllacrtraillLocation: FormationEntry) => {
-    setSelectedKey(landGllacrtraillLocation.entryKey);
-    landGllacrtraillMapRef.current?.animateToRegion(
-      {
-        latitude: landGllacrtraillLocation.latitude,
-        longitude: landGllacrtraillLocation.longitude,
-        ...FOCUS_DELTA,
-      },
-      320,
-    );
-  }, []);
+  const landGllacrtraillFocusLocation = useCallback(
+    (landGllacrtraillLocation: FormationEntry) => {
+      setSelectedKey(landGllacrtraillLocation.entryKey);
+      landGllacrtraillMapRef.current?.animateToRegion(
+        {
+          latitude: landGllacrtraillLocation.latitude,
+          longitude: landGllacrtraillLocation.longitude,
+          ...FOCUS_DELTA,
+        },
+        320,
+      );
+    },
+    [],
+  );
 
   const landGllacrtraillFocusLocationByKey = useCallback(
     (entryKey: string) => {
@@ -110,6 +118,16 @@ export function LandGllacrtraillMapPanel() {
       landGllacrtraillFocusLocation(landGllacrtraillLocation);
     },
     [landGllacrtraillFocusLocation],
+  );
+
+  useFocusEffect(
+    useCallback(() => {
+      Orientation.lockToPortrait();
+
+      return () => {
+        Orientation.unlockAllOrientations();
+      };
+    }, []),
   );
 
   useFocusEffect(
@@ -155,7 +173,8 @@ export function LandGllacrtraillMapPanel() {
         {landGllacrtraillVisibleLocations.map(landGllacrtraillLocation => {
           const isSelected = selectedKey === landGllacrtraillLocation.entryKey;
           const isPriority =
-            landGllacrtraillLocation.entryKey === landGllacrtraillPriorityLocation.entryKey && !isSelected;
+            landGllacrtraillLocation.entryKey ===
+              landGllacrtraillPriorityLocation.entryKey && !isSelected;
 
           return (
             <Marker
@@ -164,15 +183,23 @@ export function LandGllacrtraillMapPanel() {
                 latitude: landGllacrtraillLocation.latitude,
                 longitude: landGllacrtraillLocation.longitude,
               }}
-              onPress={() => landGllacrtraillFocusLocation(landGllacrtraillLocation)}
+              onPress={() =>
+                landGllacrtraillFocusLocation(landGllacrtraillLocation)
+              }
               tracksViewChanges={refreshMarkers}
               anchor={{x: 0.5, y: 1}}
               zIndex={isSelected ? 10 : isPriority ? 5 : 1}>
-              <LandGllacrtraillMapGlacierMarker
-                isSelected={isSelected}
-                isPriority={isPriority}
-                label={isSelected ? landGllacrtraillLocation.displayLabel : undefined}
-              />
+              {Platform.OS === 'android' ? null : (
+                <LandGllacrtraillMapGlacierMarker
+                  isSelected={isSelected}
+                  isPriority={isPriority}
+                  label={
+                    isSelected
+                      ? landGllacrtraillLocation.displayLabel
+                      : undefined
+                  }
+                />
+              )}
             </Marker>
           );
         })}

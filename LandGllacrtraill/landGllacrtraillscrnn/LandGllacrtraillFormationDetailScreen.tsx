@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {
   ImageBackground,
+  Platform,
   Pressable,
   ScrollView,
   Share,
@@ -32,7 +33,10 @@ import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypograp
 
 type Props = StackScreenProps<FormationDetailRouteParams, 'FormationDetail'>;
 
-export function LandGllacrtraillFormationDetailScreen({navigation, route}: Props) {
+export function LandGllacrtraillFormationDetailScreen({
+  navigation,
+  route,
+}: Props) {
   const landGllacrtraillEntry = resolveEntryByKey(route.params.entryKey);
   const [isMarked, setIsMarked] = useState(false);
 
@@ -58,9 +62,15 @@ export function LandGllacrtraillFormationDetailScreen({navigation, route}: Props
     );
   }
 
-  const landGllacrtraillVisual = resolveFormationVisual(landGllacrtraillEntry.visualAssetKey);
-  const landGllacrtraillKindLabel = kindDisplayMap[landGllacrtraillEntry.formationKind];
-  const landGllacrtraillCoordinates = formatCoordinatePair(landGllacrtraillEntry.latitude, landGllacrtraillEntry.longitude);
+  const landGllacrtraillVisual = resolveFormationVisual(
+    landGllacrtraillEntry.visualAssetKey,
+  );
+  const landGllacrtraillKindLabel =
+    kindDisplayMap[landGllacrtraillEntry.formationKind];
+  const landGllacrtraillCoordinates = formatCoordinatePair(
+    landGllacrtraillEntry.latitude,
+    landGllacrtraillEntry.longitude,
+  );
 
   const landGllacrtraillHandleMark = async () => {
     await toggleSelectedItem(landGllacrtraillEntry.entryKey);
@@ -85,11 +95,7 @@ export function LandGllacrtraillFormationDetailScreen({navigation, route}: Props
             style={styles.landGllacrtraillHeroImage}
             resizeMode="cover">
             <LinearGradient
-              colors={[
-                'rgba(6, 15, 30, 0.5)',
-                'rgba(0,0,0,0)',
-                'rgb(0, 1, 8)',
-              ]}
+              colors={['rgba(6, 15, 30, 0.5)', 'rgba(0,0,0,0)', 'rgb(0, 1, 8)']}
               locations={[0, 0.4, 1]}
               style={StyleSheet.absoluteFill}
             />
@@ -97,20 +103,31 @@ export function LandGllacrtraillFormationDetailScreen({navigation, route}: Props
               <Pressable
                 onPress={() => navigation.goBack()}
                 style={styles.landGllacrtraillRoundControl}>
-                <Text style={styles.landGllacrtraillRoundControlIcon}>←</Text>
+                <Text
+                  style={[
+                    styles.landGllacrtraillRoundControlIcon,
+                    Platform.OS === 'android' && {bottom: 4},
+                  ]}>
+                  ←
+                </Text>
               </Pressable>
-              <Pressable onPress={landGllacrtraillHandleMark} style={styles.landGllacrtraillRoundControl}>
+              <Pressable
+                onPress={landGllacrtraillHandleMark}
+                style={styles.landGllacrtraillRoundControl}>
                 <Text
                   style={[
                     styles.landGllacrtraillRoundControlIcon,
                     isMarked && styles.landGllacrtraillRoundControlIconSaved,
+                    Platform.OS === 'android' && {bottom: 2},
                   ]}>
                   {isMarked ? '★' : '☆'}
                 </Text>
               </Pressable>
             </View>
             <View style={styles.landGllacrtraillHeroKind}>
-              <Text style={styles.landGllacrtraillHeroKindText}>{landGllacrtraillKindLabel}</Text>
+              <Text style={styles.landGllacrtraillHeroKindText}>
+                {landGllacrtraillKindLabel}
+              </Text>
             </View>
           </ImageBackground>
         </View>
@@ -120,28 +137,49 @@ export function LandGllacrtraillFormationDetailScreen({navigation, route}: Props
             variant="map"
             label="VIEW ON MAP"
             leadingIcon="➤"
-            onPress={() => LandGllacrtraillopenMapLocation(navigation, landGllacrtraillEntry.entryKey)}
+            onPress={() =>
+              LandGllacrtraillopenMapLocation(
+                navigation,
+                landGllacrtraillEntry.entryKey,
+              )
+            }
             style={styles.landGllacrtraillMapAction}
           />
 
           <View style={styles.landGllacrtraillTitleRow}>
-            <Text style={styles.landGllacrtraillTitle}>{landGllacrtraillEntry.displayLabel}</Text>
-            <LandGllacrtraillAssessmentBadge value={landGllacrtraillEntry.assessmentValue} />
+            <Text style={styles.landGllacrtraillTitle}>
+              {landGllacrtraillEntry.displayLabel}
+            </Text>
+            <LandGllacrtraillAssessmentBadge
+              value={landGllacrtraillEntry.assessmentValue}
+            />
           </View>
 
           <View style={styles.landGllacrtraillSectorRow}>
             <Text style={styles.landGllacrtraillSectorIcon}>◎</Text>
-            <Text style={styles.landGllacrtraillSector}>{landGllacrtraillEntry.sectorLabel}</Text>
+            <Text style={styles.landGllacrtraillSector}>
+              {landGllacrtraillEntry.sectorLabel}
+            </Text>
           </View>
 
           <View style={styles.landGllacrtraillDivider} />
 
-          <Text style={styles.landGllacrtraillBrief}>{landGllacrtraillEntry.briefNarrative}</Text>
-          <Text style={styles.landGllacrtraillExtended}>{landGllacrtraillEntry.extendedNarrative}</Text>
+          <Text style={styles.landGllacrtraillBrief}>
+            {landGllacrtraillEntry.briefNarrative}
+          </Text>
+          <Text style={styles.landGllacrtraillExtended}>
+            {landGllacrtraillEntry.extendedNarrative}
+          </Text>
 
           <View style={styles.landGllacrtraillInfoRow}>
-            <LandGllacrtraillInfoDisplayCard label="COORDINATES" value={landGllacrtraillCoordinates} />
-            <LandGllacrtraillInfoDisplayCard label="REGION" value={landGllacrtraillEntry.sectorLabel} />
+            <LandGllacrtraillInfoDisplayCard
+              label="COORDINATES"
+              value={landGllacrtraillCoordinates}
+            />
+            <LandGllacrtraillInfoDisplayCard
+              label="REGION"
+              value={landGllacrtraillEntry.sectorLabel}
+            />
           </View>
 
           <View style={styles.landGllacrtraillGhostRow}>
@@ -151,7 +189,11 @@ export function LandGllacrtraillFormationDetailScreen({navigation, route}: Props
               isHighlighted={isMarked}
               onPress={landGllacrtraillHandleMark}
             />
-            <LandGllacrtraillGhostActionControl label="Share" icon="↗" onPress={landGllacrtraillHandleShare} />
+            <LandGllacrtraillGhostActionControl
+              label="Share"
+              icon="↗"
+              onPress={landGllacrtraillHandleShare}
+            />
           </View>
         </View>
       </ScrollView>

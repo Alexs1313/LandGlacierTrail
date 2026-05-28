@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   ImageBackground,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -12,9 +13,7 @@ import type {StackScreenProps} from '@react-navigation/stack';
 import {resolveGuideArticleVisual} from '../landGllacrtraillcpnnts/LandGllacrtraillvisualRegistry';
 import {resolveArticleByKey} from '../landGllacrtraillcpnnts/LandGllacrtraillguideCatalog';
 import type {RootStackParamList} from '../landGllacrtraillroutts/LandGllacrtrailltypes';
-import {
-  typographyMold,
-} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
+import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
 
 type Props = StackScreenProps<RootStackParamList, 'GuideArticle'>;
 
@@ -31,8 +30,11 @@ export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
     );
   }
 
-  const landGllacrtraillVisual = resolveGuideArticleVisual(landGllacrtraillArticle.visualAssetKey);
-  const landGllacrtraillParagraphs = landGllacrtraillArticle.bodyContent.split('\n\n');
+  const landGllacrtraillVisual = resolveGuideArticleVisual(
+    landGllacrtraillArticle.visualAssetKey,
+  );
+  const landGllacrtraillParagraphs =
+    landGllacrtraillArticle.bodyContent.split('\n\n');
 
   return (
     <View style={styles.landGllacrtraillRoot}>
@@ -58,7 +60,13 @@ export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
               <Pressable
                 onPress={() => navigation.goBack()}
                 style={styles.landGllacrtraillRoundControl}>
-                <Text style={styles.landGllacrtraillRoundControlIcon}>←</Text>
+                <Text
+                  style={[
+                    styles.landGllacrtraillRoundControlIcon,
+                    Platform.OS === 'android' && {bottom: 4},
+                  ]}>
+                  ←
+                </Text>
               </Pressable>
             </View>
           </ImageBackground>
@@ -66,11 +74,17 @@ export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
 
         <View style={styles.landGllacrtraillBody}>
           <View style={styles.landGllacrtraillMetaRow}>
-            <Text style={styles.landGllacrtraillDate}>{landGllacrtraillArticle.publishedLabel}</Text>
+            <Text style={styles.landGllacrtraillDate}>
+              {landGllacrtraillArticle.publishedLabel}
+            </Text>
             <Text style={styles.landGllacrtraillDot}>·</Text>
-            <Text style={styles.landGllacrtraillReadTime}>{landGllacrtraillArticle.readMinutes} min read</Text>
+            <Text style={styles.landGllacrtraillReadTime}>
+              {landGllacrtraillArticle.readMinutes} min read
+            </Text>
           </View>
-          <Text style={styles.landGllacrtraillTitle}>{landGllacrtraillArticle.title}</Text>
+          <Text style={styles.landGllacrtraillTitle}>
+            {landGllacrtraillArticle.title}
+          </Text>
           <View style={styles.landGllacrtraillDivider} />
           {landGllacrtraillParagraphs.map((paragraph, index) => (
             <Text key={index} style={styles.landGllacrtraillParagraph}>
