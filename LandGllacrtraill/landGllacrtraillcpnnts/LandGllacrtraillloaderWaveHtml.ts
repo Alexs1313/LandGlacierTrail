@@ -1,81 +1,92 @@
 export const LandGllacrtraillloaderWaveHtml = `<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      background: transparent;
+      width: 100%;
       height: 100%;
+      background: transparent;
       overflow: hidden;
     }
 
-    .loading-wave {
-      width: 300px;
-      height: 100px;
+    .loader-wrapper {
+      width: 100vw;
+      height: 100vh;
       display: flex;
+      align-items: center;
       justify-content: center;
-      align-items: flex-end;
-      margin: 0 auto;
     }
 
-    .loading-bar {
+    .dots-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .dot {
+      height: 20px;
       width: 20px;
-      height: 10px;
-      margin: 0 5px;
-      background-color: #3498db;
-      border-radius: 5px;
-      animation: loading-wave-animation 1s ease-in-out infinite;
+      margin-right: 10px;
+      border-radius: 10px;
+      background-color: #b3d4fc;
+      animation: pulse 1.5s infinite ease-in-out;
     }
 
-    .loading-bar:nth-child(2) {
+    .dot:last-child {
+      margin-right: 0;
+    }
+
+    .dot:nth-child(1) {
+      animation-delay: -0.3s;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: -0.1s;
+    }
+
+    .dot:nth-child(3) {
       animation-delay: 0.1s;
     }
 
-    .loading-bar:nth-child(3) {
-      animation-delay: 0.2s;
-    }
-
-    .loading-bar:nth-child(4) {
-      animation-delay: 0.3s;
-    }
-
-    @keyframes loading-wave-animation {
+    @keyframes pulse {
       0% {
-        height: 10px;
+        transform: scale(0.8);
+        background-color: #b3d4fc;
+        box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
       }
 
       50% {
-        height: 50px;
+        transform: scale(1.2);
+        background-color: #6793fb;
+        box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
       }
 
       100% {
-        height: 10px;
+        transform: scale(0.8);
+        background-color: #b3d4fc;
+        box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
       }
     }
   </style>
 </head>
 <body>
-  <div class="loading-wave">
-    <div class="loading-bar"></div>
-    <div class="loading-bar"></div>
-    <div class="loading-bar"></div>
-    <div class="loading-bar"></div>
+  <div class="loader-wrapper">
+    <section class="dots-container">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </section>
   </div>
 </body>
 </html>`;
 
-// Backward-compatible alias (used in screens/components).
 export const LOADER_WAVE_HTML = LandGllacrtraillloaderWaveHtml;
 
 export const LOADER_DURATION_MS = 5000;

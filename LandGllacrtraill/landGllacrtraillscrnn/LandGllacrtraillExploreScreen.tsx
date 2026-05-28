@@ -31,14 +31,21 @@ export function LandGllacrtraillExploreScreen() {
   const [segment, setSegment] = useState<FilterSegment>('all');
   const {isBookmarked, toggleBookmark} = useBookmarks();
 
-  const landGllacrtraillFilteredLocations = filterBySegment(formationCatalog, segment);
+  const landGllacrtraillFilteredLocations = filterBySegment(
+    formationCatalog,
+    segment,
+  );
 
   const landGllacrtraillShowFeatured =
     segment === 'all' ||
-    landGllacrtraillFilteredLocations.some(item => item.entryKey === landGllacrtraillFeaturedEntry.entryKey);
+    landGllacrtraillFilteredLocations.some(
+      item => item.entryKey === landGllacrtraillFeaturedEntry.entryKey,
+    );
 
   const landGllacrtraillListLocations = landGllacrtraillShowFeatured
-    ? landGllacrtraillFilteredLocations.filter(item => item.entryKey !== landGllacrtraillFeaturedEntry.entryKey)
+    ? landGllacrtraillFilteredLocations.filter(
+        item => item.entryKey !== landGllacrtraillFeaturedEntry.entryKey,
+      )
     : landGllacrtraillFilteredLocations;
 
   const landGllacrtraillHandleOpenLocation = (entryKey: string) => {
@@ -47,16 +54,13 @@ export function LandGllacrtraillExploreScreen() {
 
   return (
     <View style={styles.screen}>
-      <ImageBackground
-        source={atmosphereBackdrop}
-        style={StyleSheet.absoluteFill}
-      />
-
       <ScrollView
         style={styles.landGllacrtraillScroll}
         contentContainerStyle={styles.landGllacrtraillContent}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.landGllacrtraillEyebrow}>ICELAND GLACIER TRAIL</Text>
+        <Text style={styles.landGllacrtraillEyebrow}>
+          ICELAND GLACIER TRAIL
+        </Text>
         <Text style={styles.landGllacrtraillTitle}>Discover</Text>
 
         <ScrollView
@@ -82,12 +86,20 @@ export function LandGllacrtraillExploreScreen() {
             </View>
             <LandGllacrtraillDiscoveryCardLarge
               entry={landGllacrtraillFeaturedEntry}
-              onPress={() => landGllacrtraillHandleOpenLocation(landGllacrtraillFeaturedEntry.entryKey)}
+              onPress={() =>
+                landGllacrtraillHandleOpenLocation(
+                  landGllacrtraillFeaturedEntry.entryKey,
+                )
+              }
             />
           </View>
         ) : null}
 
-        <Text style={[styles.landGllacrtraillSectionTitle, styles.landGllacrtraillListTitle]}>
+        <Text
+          style={[
+            styles.landGllacrtraillSectionTitle,
+            styles.landGllacrtraillListTitle,
+          ]}>
           All Locations
         </Text>
 
@@ -97,7 +109,9 @@ export function LandGllacrtraillExploreScreen() {
               key={location.entryKey}
               entry={location}
               isMarked={isBookmarked(location.entryKey)}
-              onPress={() => landGllacrtraillHandleOpenLocation(location.entryKey)}
+              onPress={() =>
+                landGllacrtraillHandleOpenLocation(location.entryKey)
+              }
               onMarkPress={() => toggleBookmark(location.entryKey)}
             />
           ))}

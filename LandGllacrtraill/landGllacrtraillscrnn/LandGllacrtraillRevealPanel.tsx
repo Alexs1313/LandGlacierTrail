@@ -61,12 +61,6 @@ export function LandGllacrtraillRevealPanel() {
 
   return (
     <View style={styles.screen}>
-      <ImageBackground
-        source={atmosphereBackdrop}
-        style={StyleSheet.absoluteFill}
-        resizeMode="cover"
-      />
-
       <ScrollView
         style={styles.landGllacrtraillScroll}
         contentContainerStyle={styles.landGllacrtraillContent}
@@ -100,7 +94,6 @@ export function LandGllacrtraillRevealPanel() {
         ) : (
           <View style={styles.landGllacrtraillIntro}>
             <View style={styles.landGllacrtraillSnowOrb}>
-              <View style={styles.landGllacrtraillSnowOrbHighlight} />
               <Text style={styles.landGllacrtraillSnowOrbIcon}>❄</Text>
             </View>
             <Text style={styles.landGllacrtraillIntroTitle}>
@@ -127,6 +120,7 @@ export function LandGllacrtraillRevealPanel() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: '#060F1E',
   },
   landGllacrtraillScroll: {
     flex: 1,
@@ -154,18 +148,8 @@ const styles = StyleSheet.create({
   landGllacrtraillSnowOrb: {
     width: 170,
     height: 170,
-    borderRadius: 85,
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.3)',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 24,
-    backgroundColor: 'rgba(61, 184, 240, 0.12)',
-    shadowColor: '#3DB8F0',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.18,
-    shadowRadius: 30,
-    elevation: 4,
   },
   landGllacrtraillSnowOrbHighlight: {
     position: 'absolute',
@@ -183,7 +167,7 @@ const styles = StyleSheet.create({
     fontFamily: 'BarlowCondensed-Bold',
     fontSize: 24,
     lineHeight: 36,
-    color: '#051E2C',
+    color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 12,
   },
@@ -192,6 +176,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width: '100%',
     marginBottom: 24,
+    color: '#FFFFFF',
   },
   landGllacrtraillRevealButton: {
     alignSelf: 'center',
