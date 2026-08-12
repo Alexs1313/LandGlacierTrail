@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
-import {
-  ImageBackground,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-
+import {ImageBackground, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
 import {LandGllacrtraillPrimaryActionControl} from '../landGllacrtraillcpnnts/LandGllacrtraillPrimaryActionControl';
+import {LandGllacrtraillScalePressable} from '../landGllacrtraillcpnnts/LandGllacrtraillScalePressable';
 import {onboardPhases} from '../landGllacrtraillcpnnts/LandGllacrtraillonboardPhases';
 import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
 
@@ -39,17 +33,23 @@ export function LandGllacrtraillOnboardingScreen({onComplete}: Props) {
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
         showsVerticalScrollIndicator={false}>
-        <View style={styles.landGllacrtraillTopBar}>
+        <LandGllacrtraillFadeInView style={styles.landGllacrtraillTopBar}>
           <View style={styles.landGllacrtraillStatusPill}>
             <View style={styles.landGllacrtraillStatusDot} />
             <Text style={styles.landGllacrtraillStatusText}>EXPEDITION MODE</Text>
           </View>
-          <Pressable onPress={onComplete} style={styles.landGllacrtraillSkipPill}>
+          <LandGllacrtraillScalePressable
+            onPress={onComplete}
+            pressScale={0.92}
+            animateStyle={styles.landGllacrtraillSkipPill}>
             <Text style={styles.landGllacrtraillSkipText}>Skip</Text>
-          </Pressable>
-        </View>
+          </LandGllacrtraillScalePressable>
+        </LandGllacrtraillFadeInView>
 
-        <View style={styles.landGllacrtraillBottomPanel}>
+        <LandGllacrtraillFadeInView
+          key={landGllacrtraillCurrentPhase.phaseKey}
+          delay={150}
+          style={styles.landGllacrtraillBottomPanel}>
           <View style={styles.landGllacrtraillIndicatorRow}>
             {onboardPhases.map((phase, index) => (
               <View
@@ -61,14 +61,18 @@ export function LandGllacrtraillOnboardingScreen({onComplete}: Props) {
               />
             ))}
           </View>
-          <Text style={styles.landGllacrtraillHeadline}>{landGllacrtraillCurrentPhase.headline}</Text>
-          <Text style={styles.landGllacrtraillBody}>{landGllacrtraillCurrentPhase.bodyCopy}</Text>
+          <Text style={styles.landGllacrtraillHeadline}>
+            {landGllacrtraillCurrentPhase.headline}
+          </Text>
+          <Text style={styles.landGllacrtraillBody}>
+            {landGllacrtraillCurrentPhase.bodyCopy}
+          </Text>
           <LandGllacrtraillPrimaryActionControl
             label={landGllacrtraillCurrentPhase.actionLabel}
             onPress={landGllacrtraillAdvance}
             style={styles.landGllacrtraillAction}
           />
-        </View>
+        </LandGllacrtraillFadeInView>
       </ScrollView>
     </ImageBackground>
   );

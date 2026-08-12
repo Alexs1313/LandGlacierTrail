@@ -1,6 +1,6 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text} from 'react-native';
-
+import {StyleSheet, Text} from 'react-native';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 
 type Props = {
   label: string;
@@ -10,13 +10,17 @@ type Props = {
 
 export function LandGllacrtraillFilterPill({label, isActive, onPress}: Props) {
   return (
-    <Pressable
+    <LandGllacrtraillScalePressable
       onPress={onPress}
-      style={[styles.landGllacrtraillPill, isActive && styles.landGllacrtraillPillActive]}>
+      pressScale={0.92}
+      animateStyle={[
+        styles.landGllacrtraillPill,
+        isActive && styles.landGllacrtraillPillActive,
+      ]}>
       <Text style={[styles.label, isActive && styles.landGllacrtraillLabelActive]}>
         {label}
       </Text>
-    </Pressable>
+    </LandGllacrtraillScalePressable>
   );
 }
 
@@ -25,10 +29,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 7,
     borderRadius: 999,
-    backgroundColor: 'rgba(61, 184, 240, 0.12)',
+    backgroundColor: 'rgba(6, 15, 30, 0.45)',
     marginRight: 8,
     borderWidth: 1,
-    borderColor: 'rgba(61, 184, 240, 0.12)',
+    borderColor: 'rgba(61, 184, 240, 0.35)',
   },
   landGllacrtraillPillActive: {
     backgroundColor: '#3DB8F0',
@@ -38,7 +42,7 @@ const styles = StyleSheet.create({
     fontFamily: 'BarlowCondensed-Regular',
     fontSize: 13,
     letterSpacing: 0.52,
-    color: '#7AD4F5',
+    color: '#E8F4FC',
   },
   landGllacrtraillLabelActive: {
     color: '#060F1E',

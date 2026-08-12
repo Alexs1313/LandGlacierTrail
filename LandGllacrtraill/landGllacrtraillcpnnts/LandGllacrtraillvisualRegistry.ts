@@ -28,6 +28,7 @@ export const onboardVisuals = {
   routes: require('../../assets/images/onboard_routes.png'),
   map: require('../../assets/images/onboard_map.png'),
   reveal: require('../../assets/images/onboard_reveal.png'),
+  quiz: require('../../assets/images/guide_preparing.png'),
   archive: require('../../assets/images/onboard_archive.png'),
 } as const;
 
@@ -56,6 +57,7 @@ export const tabGlyphRegistry = {
   MapTab: require('../../assets/images/tab_glyph_terrain.png'),
   RevealTab: require('../../assets/images/tab_glyph_reveal.png'),
   NotesTab: require('../../assets/images/tab_glyph_journal.png'),
+  QuizTab: require('../../assets/images/quiz.png'),
   SavedTab: require('../../assets/images/tab_glyph_archive.png'),
 } as const;
 

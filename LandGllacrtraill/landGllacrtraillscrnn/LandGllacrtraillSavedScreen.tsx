@@ -10,6 +10,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import {atmosphereBackdrop} from '../landGllacrtraillcpnnts/LandGllacrtraillvisualRegistry';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
 import {LandGllacrtraillSavedRowItem} from '../landGllacrtraillcpnnts/LandGllacrtraillSavedRowItem';
 import {formationCatalog} from '../landGllacrtraillcpnnts/LandGllacrtraillformationCatalog';
 import {useBookmarks} from '../landGllacrtraillcpnnts/LandGllacrtrailluseBookmarks';
@@ -48,11 +49,13 @@ export function LandGllacrtraillSavedScreen() {
         style={styles.landGllacrtraillScroll}
         contentContainerStyle={[styles.landGllacrtraillContent, landGllacrtraillIsEmpty && styles.landGllacrtraillContentEmpty]}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.landGllacrtraillEyebrow}>MY COLLECTION</Text>
-        <Text style={styles.landGllacrtraillTitle}>Saved</Text>
+        <LandGllacrtraillFadeInView>
+          <Text style={styles.landGllacrtraillEyebrow}>MY COLLECTION</Text>
+          <Text style={styles.landGllacrtraillTitle}>Saved</Text>
+        </LandGllacrtraillFadeInView>
 
         {landGllacrtraillIsEmpty ? (
-          <View style={styles.landGllacrtraillEmpty}>
+          <LandGllacrtraillFadeInView index={1} style={styles.landGllacrtraillEmpty}>
             <View style={styles.landGllacrtraillEmptyIcon}>
               <Image source={require('../../assets/images/nosaved.png')} />
             </View>
@@ -61,13 +64,14 @@ export function LandGllacrtraillSavedScreen() {
               Explore locations and tap the bookmark icon to save your favorites
               here.
             </Text>
-          </View>
+          </LandGllacrtraillFadeInView>
         ) : (
           <View style={styles.landGllacrtraillList}>
-            {landGllacrtraillSavedLocations.map(location => (
+            {landGllacrtraillSavedLocations.map((location, idx) => (
               <LandGllacrtraillSavedRowItem
                 key={location.entryKey}
                 entry={location}
+                index={idx}
                 onPress={() => landGllacrtraillOpenLocation(location.entryKey)}
                 onRemovePress={() => toggleBookmark(location.entryKey)}
               />

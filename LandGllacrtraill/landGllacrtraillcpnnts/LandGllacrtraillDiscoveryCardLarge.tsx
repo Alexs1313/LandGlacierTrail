@@ -1,61 +1,70 @@
 import React from 'react';
-import {ImageBackground, Pressable, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {LandGllacrtraillFadeInView} from './LandGllacrtraillFadeInView';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 import {resolveFormationVisual} from './LandGllacrtraillvisualRegistry';
 import {kindDisplayMap} from './LandGllacrtraillformationCatalog';
 import {FormationEntry} from './LandGllacrtraillentrySchema';
-
 import {typographyMold} from './LandGllacrtrailltypographyMold';
 import {LandGllacrtraillAssessmentBadge} from './LandGllacrtraillAssessmentBadge';
 
 type Props = {
   entry: FormationEntry;
   onPress?: () => void;
+  index?: number;
 };
 
-export function LandGllacrtraillDiscoveryCardLarge({entry, onPress}: Props) {
+export function LandGllacrtraillDiscoveryCardLarge({entry, onPress, index = 0}: Props) {
   const source = resolveFormationVisual(entry.visualAssetKey);
   const landGllacrtraillKindLabel = kindDisplayMap[entry.formationKind];
 
   return (
-    <Pressable onPress={onPress} style={styles.landGllacrtraillWrapper}>
-      <ImageBackground
-        source={source}
-        style={styles.landGllacrtraillImage}
-        imageStyle={styles.landGllacrtraillImageRadius}>
-        <LinearGradient
-          colors={[
-            'rgba(6,15,30,0)',
-            'rgba(6,15,30,0.3)',
-            'rgba(6, 15, 30, 0.95)',
-          ]}
-          locations={[0, 0.6, 1]}
-          style={styles.landGllacrtraillGradient}>
-          <View style={{padding: 15, justifyContent: 'space-between', flex: 1}}>
-            <View style={styles.landGllacrtraillTopRow}>
-              {entry.priorityLevel ? (
-                <View style={styles.landGllacrtraillFeaturedBadge}>
-                  <View style={styles.landGllacrtraillFeaturedDot} />
-                  <Text style={styles.landGllacrtraillFeaturedText}>FEATURED</Text>
+    <LandGllacrtraillFadeInView index={index}>
+      <LandGllacrtraillScalePressable
+        onPress={onPress}
+        pressScale={0.97}
+        animateStyle={styles.landGllacrtraillWrapper}>
+        <ImageBackground
+          source={source}
+          style={styles.landGllacrtraillImage}
+          imageStyle={styles.landGllacrtraillImageRadius}>
+          <LinearGradient
+            colors={[
+              'rgba(6,15,30,0)',
+              'rgba(6,15,30,0.3)',
+              'rgba(6, 15, 30, 0.95)',
+            ]}
+            locations={[0, 0.6, 1]}
+            style={styles.landGllacrtraillGradient}>
+            <View style={{padding: 15, justifyContent: 'space-between', flex: 1}}>
+              <View style={styles.landGllacrtraillTopRow}>
+                {entry.priorityLevel ? (
+                  <View style={styles.landGllacrtraillFeaturedBadge}>
+                    <View style={styles.landGllacrtraillFeaturedDot} />
+                    <Text style={styles.landGllacrtraillFeaturedText}>FEATURED</Text>
+                  </View>
+                ) : (
+                  <View />
+                )}
+              </View>
+              <View style={styles.landGllacrtraillBottom}>
+                <View style={styles.landGllacrtraillKindBadge}>
+                  <Text style={styles.landGllacrtraillKindText}>
+                    {landGllacrtraillKindLabel}
+                  </Text>
                 </View>
-              ) : (
-                <View />
-              )}
-            </View>
-            <View style={styles.landGllacrtraillBottom}>
-              <View style={styles.landGllacrtraillKindBadge}>
-                <Text style={styles.landGllacrtraillKindText}>{landGllacrtraillKindLabel}</Text>
-              </View>
-              <Text style={styles.landGllacrtraillTitle}>{entry.displayLabel}</Text>
-              <View style={styles.landGllacrtraillMetaRow}>
-                <LandGllacrtraillAssessmentBadge value={entry.assessmentValue} />
-                <Text style={styles.landGllacrtraillSector}>{entry.sectorLabel}</Text>
+                <Text style={styles.landGllacrtraillTitle}>{entry.displayLabel}</Text>
+                <View style={styles.landGllacrtraillMetaRow}>
+                  <LandGllacrtraillAssessmentBadge value={entry.assessmentValue} />
+                  <Text style={styles.landGllacrtraillSector}>{entry.sectorLabel}</Text>
+                </View>
               </View>
             </View>
-          </View>
-        </LinearGradient>
-      </ImageBackground>
-    </Pressable>
+          </LinearGradient>
+        </ImageBackground>
+      </LandGllacrtraillScalePressable>
+    </LandGllacrtraillFadeInView>
   );
 }
 

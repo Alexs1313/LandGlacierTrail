@@ -1,6 +1,7 @@
 import React from 'react';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 import {tabGlyphRegistry, TabRouteKey} from './LandGllacrtraillvisualRegistry';
 
 const landGllacrtraillTabMeta: Record<TabRouteKey, {label: string}> = {
@@ -8,6 +9,7 @@ const landGllacrtraillTabMeta: Record<TabRouteKey, {label: string}> = {
   MapTab: {label: 'Map'},
   RevealTab: {label: 'Ice Reveal'},
   NotesTab: {label: 'Notes'},
+  QuizTab: {label: 'Quiz'},
   SavedTab: {label: 'Saved'},
 };
 
@@ -45,7 +47,9 @@ export function LandGllacrtraillGlobalNavigation({state, navigation}: BottomTabB
       {state.routes.map((route, index) => {
         const landGllacrtraillIsFocused = state.index === index;
         const landGllacrtraillRouteKey = route.name as TabRouteKey;
-        const landGllacrtraillMeta = landGllacrtraillTabMeta[landGllacrtraillRouteKey] ?? {label: route.name};
+        const landGllacrtraillMeta = landGllacrtraillTabMeta[landGllacrtraillRouteKey] ?? {
+          label: route.name,
+        };
         const landGllacrtraillGlyphSource = tabGlyphRegistry[landGllacrtraillRouteKey];
 
         const onPress = () => {
@@ -60,10 +64,12 @@ export function LandGllacrtraillGlobalNavigation({state, navigation}: BottomTabB
         };
 
         return (
-          <Pressable
+          <LandGllacrtraillScalePressable
             key={route.key}
             onPress={onPress}
-            style={styles.landGllacrtraillTab}
+            pressScale={0.88}
+            style={styles.landGllacrtraillTabPressable}
+            animateStyle={styles.landGllacrtraillTab}
             accessibilityRole="button"
             accessibilityState={landGllacrtraillIsFocused ? {selected: true} : {}}>
             {landGllacrtraillIsFocused ? (
@@ -79,10 +85,14 @@ export function LandGllacrtraillGlobalNavigation({state, navigation}: BottomTabB
                 />
               </View>
             )}
-            <Text style={[styles.label, landGllacrtraillIsFocused && styles.landGllacrtraillLabelActive]}>
+            <Text
+              style={[
+                styles.label,
+                landGllacrtraillIsFocused && styles.landGllacrtraillLabelActive,
+              ]}>
               {landGllacrtraillMeta.label}
             </Text>
-          </Pressable>
+          </LandGllacrtraillScalePressable>
         );
       })}
     </View>
@@ -97,6 +107,9 @@ const styles = StyleSheet.create({
     borderTopColor: 'rgba(61, 184, 240, 0.12)',
     alignItems: 'center',
     paddingBottom: 20,
+  },
+  landGllacrtraillTabPressable: {
+    flex: 1,
   },
   landGllacrtraillTab: {
     flex: 1,

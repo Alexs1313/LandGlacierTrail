@@ -10,6 +10,7 @@ import {useNavigation} from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import {atmosphereBackdrop} from '../landGllacrtraillcpnnts/LandGllacrtraillvisualRegistry';
 import {LandGllacrtraillDiscoveryCardLarge} from '../landGllacrtraillcpnnts/LandGllacrtraillDiscoveryCardLarge';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
 import {LandGllacrtraillFilterPill} from '../landGllacrtraillcpnnts/LandGllacrtraillFilterPill';
 import {LandGllacrtraillLocationRowItem} from '../landGllacrtraillcpnnts/LandGllacrtraillLocationRowItem';
 import {
@@ -56,26 +57,30 @@ export function LandGllacrtraillExploreScreen() {
         style={styles.landGllacrtraillScroll}
         contentContainerStyle={styles.landGllacrtraillContent}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.landGllacrtraillEyebrow}>ICELAND GLACIER TRAIL</Text>
-        <Text style={styles.landGllacrtraillTitle}>Discover</Text>
+        <LandGllacrtraillFadeInView>
+          <Text style={styles.landGllacrtraillEyebrow}>ICELAND GLACIER TRAIL</Text>
+          <Text style={styles.landGllacrtraillTitle}>Discover</Text>
+        </LandGllacrtraillFadeInView>
 
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={styles.landGllacrtraillFilters}
-          contentContainerStyle={styles.landGllacrtraillFiltersContent}>
-          {filterSegments.map(filter => (
-            <LandGllacrtraillFilterPill
-              key={filter.segmentKey}
-              label={filter.segmentLabel}
-              isActive={segment === filter.segmentKey}
-              onPress={() => setSegment(filter.segmentKey)}
-            />
-          ))}
-        </ScrollView>
+        <LandGllacrtraillFadeInView index={1}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.landGllacrtraillFilters}
+            contentContainerStyle={styles.landGllacrtraillFiltersContent}>
+            {filterSegments.map(filter => (
+              <LandGllacrtraillFilterPill
+                key={filter.segmentKey}
+                label={filter.segmentLabel}
+                isActive={segment === filter.segmentKey}
+                onPress={() => setSegment(filter.segmentKey)}
+              />
+            ))}
+          </ScrollView>
+        </LandGllacrtraillFadeInView>
 
         {landGllacrtraillShowFeatured ? (
-          <View style={styles.landGllacrtraillFeatured}>
+          <LandGllacrtraillFadeInView index={2} style={styles.landGllacrtraillFeatured}>
             <View style={styles.landGllacrtraillFeaturedHeader}>
               <Text style={styles.landGllacrtraillSectionTitle}>Featured</Text>
               <Text style={styles.landGllacrtraillSectionAction}>See all</Text>
@@ -84,18 +89,21 @@ export function LandGllacrtraillExploreScreen() {
               entry={landGllacrtraillFeaturedEntry}
               onPress={() => landGllacrtraillHandleOpenLocation(landGllacrtraillFeaturedEntry.entryKey)}
             />
-          </View>
+          </LandGllacrtraillFadeInView>
         ) : null}
 
-        <Text style={[styles.landGllacrtraillSectionTitle, styles.landGllacrtraillListTitle]}>
-          All Locations
-        </Text>
+        <LandGllacrtraillFadeInView index={3}>
+          <Text style={[styles.landGllacrtraillSectionTitle, styles.landGllacrtraillListTitle]}>
+            All Locations
+          </Text>
+        </LandGllacrtraillFadeInView>
 
         <View style={styles.landGllacrtraillList}>
-          {landGllacrtraillListLocations.map(location => (
+          {landGllacrtraillListLocations.map((location, idx) => (
             <LandGllacrtraillLocationRowItem
               key={location.entryKey}
               entry={location}
+              index={idx}
               isMarked={isBookmarked(location.entryKey)}
               onPress={() => landGllacrtraillHandleOpenLocation(location.entryKey)}
               onMarkPress={() => toggleBookmark(location.entryKey)}

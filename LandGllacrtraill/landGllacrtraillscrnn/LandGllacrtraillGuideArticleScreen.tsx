@@ -1,17 +1,24 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   ImageBackground,
   Platform,
-  Pressable,
   ScrollView,
+  Share,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import type {StackScreenProps} from '@react-navigation/stack';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
+import {LandGllacrtraillGhostActionControl} from '../landGllacrtraillcpnnts/LandGllacrtraillGhostActionControl';
+import {LandGllacrtraillScalePressable} from '../landGllacrtraillcpnnts/LandGllacrtraillScalePressable';
 import {resolveGuideArticleVisual} from '../landGllacrtraillcpnnts/LandGllacrtraillvisualRegistry';
 import {resolveArticleByKey} from '../landGllacrtraillcpnnts/LandGllacrtraillguideCatalog';
+import {
+  readSavedArticles,
+  toggleSavedArticle,
+} from '../landGllacrtraillcpnnts/LandGllacrtraillpersistenceGate';
 import type {RootStackParamList} from '../landGllacrtraillroutts/LandGllacrtrailltypes';
 import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
 
@@ -19,13 +26,26 @@ type Props = StackScreenProps<RootStackParamList, 'GuideArticle'>;
 
 export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
   const landGllacrtraillArticle = resolveArticleByKey(route.params.articleKey);
+  const [isSaved, setIsSaved] = useState(false);
+
+  const landGllacrtraillLoadSaved = useCallback(async () => {
+    if (!landGllacrtraillArticle) {
+      return;
+    }
+    const landGllacrtraillKeys = await readSavedArticles();
+    setIsSaved(landGllacrtraillKeys.includes(landGllacrtraillArticle.articleKey));
+  }, [landGllacrtraillArticle]);
+
+  useEffect(() => {
+    landGllacrtraillLoadSaved();
+  }, [landGllacrtraillLoadSaved]);
 
   if (!landGllacrtraillArticle) {
     return (
       <View style={styles.landGllacrtraillMissing}>
-        <Pressable onPress={() => navigation.goBack()}>
+        <LandGllacrtraillScalePressable onPress={() => navigation.goBack()}>
           <Text style={styles.landGllacrtraillBackLabel}>← Back</Text>
-        </Pressable>
+        </LandGllacrtraillScalePressable>
       </View>
     );
   }
@@ -35,6 +55,17 @@ export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
   );
   const landGllacrtraillParagraphs =
     landGllacrtraillArticle.bodyContent.split('\n\n');
+
+  const landGllacrtraillHandleSave = async () => {
+    await toggleSavedArticle(landGllacrtraillArticle.articleKey);
+    await landGllacrtraillLoadSaved();
+  };
+
+  const landGllacrtraillHandleShare = () => {
+    Share.share({
+      message: `${landGllacrtraillArticle.title}\n\n${landGllacrtraillArticle.previewText}`,
+    });
+  };
 
   return (
     <View style={styles.landGllacrtraillRoot}>
@@ -57,9 +88,10 @@ export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
               style={StyleSheet.absoluteFill}
             />
             <View style={styles.landGllacrtraillHeroControls}>
-              <Pressable
+              <LandGllacrtraillScalePressable
                 onPress={() => navigation.goBack()}
-                style={styles.landGllacrtraillRoundControl}>
+                pressScale={0.85}
+                animateStyle={styles.landGllacrtraillRoundControl}>
                 <Text
                   style={[
                     styles.landGllacrtraillRoundControlIcon,
@@ -67,12 +99,25 @@ export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
                   ]}>
                   ←
                 </Text>
-              </Pressable>
+              </LandGllacrtraillScalePressable>
+              <LandGllacrtraillScalePressable
+                onPress={landGllacrtraillHandleSave}
+                pressScale={0.85}
+                animateStyle={styles.landGllacrtraillRoundControl}>
+                <Text
+                  style={[
+                    styles.landGllacrtraillRoundControlIcon,
+                    isSaved && styles.landGllacrtraillRoundControlIconSaved,
+                    Platform.OS === 'android' && {bottom: 2},
+                  ]}>
+                  {isSaved ? '♥' : '♡'}
+                </Text>
+              </LandGllacrtraillScalePressable>
             </View>
           </ImageBackground>
         </View>
 
-        <View style={styles.landGllacrtraillBody}>
+        <LandGllacrtraillFadeInView delay={200} style={styles.landGllacrtraillBody}>
           <View style={styles.landGllacrtraillMetaRow}>
             <Text style={styles.landGllacrtraillDate}>
               {landGllacrtraillArticle.publishedLabel}
@@ -91,7 +136,15 @@ export function LandGllacrtraillGuideArticleScreen({navigation, route}: Props) {
               {paragraph}
             </Text>
           ))}
-        </View>
+
+          <View style={styles.landGllacrtraillShareRow}>
+            <LandGllacrtraillGhostActionControl
+              label="Share"
+              icon="↗"
+              onPress={landGllacrtraillHandleShare}
+            />
+          </View>
+        </LandGllacrtraillFadeInView>
       </ScrollView>
     </View>
   );
@@ -121,6 +174,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   landGllacrtraillHeroControls: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingTop: 60,
     paddingHorizontal: 16,
   },
@@ -137,6 +192,9 @@ const styles = StyleSheet.create({
   landGllacrtraillRoundControlIcon: {
     fontSize: 18,
     color: '#E8F4FC',
+  },
+  landGllacrtraillRoundControlIconSaved: {
+    color: '#F05A7A',
   },
   landGllacrtraillBody: {
     paddingHorizontal: 20,
@@ -174,5 +232,8 @@ const styles = StyleSheet.create({
   },
   landGllacrtraillParagraph: {
     ...typographyMold.bodyNarrative,
+  },
+  landGllacrtraillShareRow: {
+    marginTop: 8,
   },
 });

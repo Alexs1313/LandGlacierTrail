@@ -1,6 +1,6 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, ViewStyle} from 'react-native';
-
+import {StyleSheet, Text, ViewStyle} from 'react-native';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 import {typographyMold} from './LandGllacrtrailltypographyMold';
 
 type Props = {
@@ -19,24 +19,33 @@ export function LandGllacrtraillGhostActionControl({
   style,
 }: Props) {
   return (
-    <Pressable
+    <LandGllacrtraillScalePressable
       onPress={onPress}
-      style={[
+      style={[styles.landGllacrtraillPressableOuter, style]}
+      animateStyle={[
         styles.landGllacrtraillPressable,
         isHighlighted && styles.landGllacrtraillPressableHighlighted,
-        style,
       ]}>
-      <Text style={[styles.landGllacrtraillIcon, isHighlighted && styles.landGllacrtraillIconSaved]}>
+      <Text
+        style={[
+          styles.landGllacrtraillIcon,
+          isHighlighted && styles.landGllacrtraillIconSaved,
+        ]}>
         {icon}
       </Text>
       <Text style={styles.label}>{label}</Text>
-    </Pressable>
+    </LandGllacrtraillScalePressable>
   );
 }
 
 const styles = StyleSheet.create({
-  landGllacrtraillPressable: {
+  landGllacrtraillPressableOuter: {
     flex: 1,
+    flexBasis: 0,
+    minWidth: 0,
+  },
+  landGllacrtraillPressable: {
+    alignSelf: 'stretch',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -44,20 +53,23 @@ const styles = StyleSheet.create({
     height: 52.5,
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: 'rgba(61, 184, 240, 0.3)',
-    backgroundColor: 'rgba(61, 184, 240, 0.1)',
+    borderColor: 'rgba(61, 184, 240, 0.45)',
+    backgroundColor: 'rgba(6, 15, 30, 0.55)',
   },
   landGllacrtraillPressableHighlighted: {
-    backgroundColor: 'rgba(61, 184, 240, 0.2)',
+    backgroundColor: 'rgba(61, 184, 240, 0.22)',
+    borderColor: 'rgba(61, 184, 240, 0.55)',
   },
   landGllacrtraillIcon: {
     fontSize: 16,
-    color: '#3DB8F0',
+    color: '#7AD4F5',
   },
   landGllacrtraillIconSaved: {
     color: '#F0C843',
   },
   label: {
     ...typographyMold.buttonGhost,
+    color: '#E8F4FC',
+    flexShrink: 1,
   },
 });

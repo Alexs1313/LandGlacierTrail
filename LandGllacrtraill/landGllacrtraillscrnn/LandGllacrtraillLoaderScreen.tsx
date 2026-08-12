@@ -8,12 +8,12 @@ import {
 } from 'react-native';
 import type {StackScreenProps} from '@react-navigation/stack';
 import {WebView} from 'react-native-webview';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
 import {appIconVisual} from '../landGllacrtraillcpnnts/LandGllacrtraillvisualRegistry';
 import {
   LOADER_DURATION_MS,
   LOADER_WAVE_HTML,
 } from '../landGllacrtraillcpnnts/LandGllacrtraillloaderWaveHtml';
-import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
 import type {RootStackParamList} from '../landGllacrtraillroutts/LandGllacrtrailltypes';
 
 type Props = StackScreenProps<RootStackParamList, 'Loader'>;
@@ -35,26 +35,30 @@ export function LandGllacrtraillLoaderScreen({navigation}: Props) {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.landGllacrtraillScrollContent}>
         <View style={styles.landGllacrtraillMain}>
-          <View style={styles.landGllacrtraillIconShadow}>
-            <Image
-              source={appIconVisual}
-              style={styles.landGllacrtraillIcon}
-              resizeMode="contain"
-            />
-          </View>
+          <LandGllacrtraillFadeInView duration={600} offset={16}>
+            <View style={styles.landGllacrtraillIconShadow}>
+              <Image
+                source={appIconVisual}
+                style={styles.landGllacrtraillIcon}
+                resizeMode="contain"
+              />
+            </View>
+          </LandGllacrtraillFadeInView>
         </View>
 
-        <View style={styles.landGllacrtraillWaveWrap}>
-          <WebView
-            source={{html: LOADER_WAVE_HTML}}
-            style={styles.landGllacrtraillWave}
-            scrollEnabled={false}
-            showsVerticalScrollIndicator={false}
-            showsHorizontalScrollIndicator={false}
-            originWhitelist={['*']}
-            backgroundColor="transparent"
-          />
-        </View>
+        <LandGllacrtraillFadeInView delay={300} duration={500} offset={12}>
+          <View style={styles.landGllacrtraillWaveWrap}>
+            <WebView
+              source={{html: LOADER_WAVE_HTML}}
+              style={styles.landGllacrtraillWave}
+              scrollEnabled={false}
+              showsVerticalScrollIndicator={false}
+              showsHorizontalScrollIndicator={false}
+              originWhitelist={['*']}
+              backgroundColor="transparent"
+            />
+          </View>
+        </LandGllacrtraillFadeInView>
       </ScrollView>
     </ImageBackground>
   );
@@ -88,19 +92,6 @@ const styles = StyleSheet.create({
     width: 144,
     height: 144,
     borderRadius: 33,
-  },
-  landGllacrtraillTagline: {
-    ...typographyMold.labelCaps,
-    letterSpacing: 1.2,
-    marginBottom: 8,
-  },
-  landGllacrtraillTitle: {
-    fontFamily: 'BarlowCondensed-Bold',
-    fontSize: 30,
-    lineHeight: 45,
-    letterSpacing: 0.75,
-    color: '#E8F4FC',
-    textAlign: 'center',
   },
   landGllacrtraillWaveWrap: {
     position: 'absolute',

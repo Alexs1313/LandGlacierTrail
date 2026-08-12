@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SELECTED_ITEMS_KEY = '@vault_selected_items';
 const CHECKLIST_PACKED_KEY = '@vault_checklist_packed';
+const SAVED_ARTICLES_KEY = '@vault_saved_articles';
 
 export async function readSelectedItems(): Promise<string[]> {
   const landGllacrtraillRaw = await AsyncStorage.getItem(SELECTED_ITEMS_KEY);
@@ -52,5 +53,27 @@ export async function toggleChecklistItem(itemKey: string): Promise<boolean> {
     ? landGllacrtraillCurrent.filter(k => k !== itemKey)
     : [...landGllacrtraillCurrent, itemKey];
   await writeChecklistPacked(landGllacrtraillNext);
+  return !landGllacrtraillExists;
+}
+
+export async function readSavedArticles(): Promise<string[]> {
+  const landGllacrtraillRaw = await AsyncStorage.getItem(SAVED_ARTICLES_KEY);
+  if (!landGllacrtraillRaw) {
+    return [];
+  }
+  try {
+    return JSON.parse(landGllacrtraillRaw) as string[];
+  } catch {
+    return [];
+  }
+}
+
+export async function toggleSavedArticle(articleKey: string): Promise<boolean> {
+  const landGllacrtraillCurrent = await readSavedArticles();
+  const landGllacrtraillExists = landGllacrtraillCurrent.includes(articleKey);
+  const landGllacrtraillNext = landGllacrtraillExists
+    ? landGllacrtraillCurrent.filter(k => k !== articleKey)
+    : [...landGllacrtraillCurrent, articleKey];
+  await AsyncStorage.setItem(SAVED_ARTICLES_KEY, JSON.stringify(landGllacrtraillNext));
   return !landGllacrtraillExists;
 }

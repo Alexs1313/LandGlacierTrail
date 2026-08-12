@@ -1,31 +1,38 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import {LandGllacrtraillFadeInView} from './LandGllacrtraillFadeInView';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 import type {GuideSafetyNote} from './LandGllacrtraillguideSchema';
-
 import {typographyMold} from './LandGllacrtrailltypographyMold';
 
 type Props = {
   note: GuideSafetyNote;
   onPress: () => void;
+  index?: number;
 };
 
-export function LandGllacrtraillSafetyGuideCard({note, onPress}: Props) {
+export function LandGllacrtraillSafetyGuideCard({note, onPress, index = 0}: Props) {
   return (
-    <Pressable onPress={onPress} style={styles.landGllacrtraillCard}>
-      <View style={styles.landGllacrtraillIconWrap}>
-        <Text style={styles.landGllacrtraillShield}>🛡</Text>
-      </View>
-      <View style={styles.landGllacrtraillBody}>
-        <Text style={styles.landGllacrtraillTitle}>{note.title}</Text>
-        <Text style={styles.landGllacrtraillPreview} numberOfLines={3}>
-          {note.previewText}
-        </Text>
-        <View style={styles.landGllacrtraillLinkRow}>
-          <Text style={styles.landGllacrtraillLink}>Read more</Text>
-          <Text style={styles.landGllacrtraillChevron}>›</Text>
+    <LandGllacrtraillFadeInView index={index}>
+      <LandGllacrtraillScalePressable
+        onPress={onPress}
+        pressScale={0.97}
+        animateStyle={styles.landGllacrtraillCard}>
+        <View style={styles.landGllacrtraillIconWrap}>
+          <Text style={styles.landGllacrtraillShield}>🛡</Text>
         </View>
-      </View>
-    </Pressable>
+        <View style={styles.landGllacrtraillBody}>
+          <Text style={styles.landGllacrtraillTitle}>{note.title}</Text>
+          <Text style={styles.landGllacrtraillPreview} numberOfLines={3}>
+            {note.previewText}
+          </Text>
+          <View style={styles.landGllacrtraillLinkRow}>
+            <Text style={styles.landGllacrtraillLink}>Read more</Text>
+            <Text style={styles.landGllacrtraillChevron}>›</Text>
+          </View>
+        </View>
+      </LandGllacrtraillScalePressable>
+    </LandGllacrtraillFadeInView>
   );
 }
 

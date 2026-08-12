@@ -9,6 +9,7 @@ import {
   type RouteProp,
 } from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
 import {LandGllacrtraillFilterPill} from '../landGllacrtraillcpnnts/LandGllacrtraillFilterPill';
 import {LandGllacrtraillMapGlacierMarker} from '../landGllacrtraillcpnnts/LandGllacrtraillMapGlacierMarker';
 import {LandGllacrtraillMapSelectionPanel} from '../landGllacrtraillcpnnts/LandGllacrtraillMapSelectionPanel';
@@ -214,7 +215,7 @@ export function LandGllacrtraillMapPanel() {
         locations={[0, 0.55, 1]}
         style={styles.landGllacrtraillHeader}
         pointerEvents="box-none">
-        <View style={styles.landGllacrtraillHeaderContent}>
+        <LandGllacrtraillFadeInView style={styles.landGllacrtraillHeaderContent}>
           <Text style={styles.landGllacrtraillTitle}>Glacier Map</Text>
           <ScrollView
             horizontal
@@ -229,7 +230,7 @@ export function LandGllacrtraillMapPanel() {
               />
             ))}
           </ScrollView>
-        </View>
+        </LandGllacrtraillFadeInView>
       </LinearGradient>
 
       {landGllacrtraillSelectedLocation ? (

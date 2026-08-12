@@ -1,9 +1,10 @@
 import React from 'react';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import {LandGllacrtraillFadeInView} from './LandGllacrtraillFadeInView';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 import {resolveFormationVisual} from './LandGllacrtraillvisualRegistry';
 import {kindDisplayMap} from './LandGllacrtraillformationCatalog';
 import type {FormationEntry} from './LandGllacrtraillentrySchema';
-
 import {typographyMold} from './LandGllacrtrailltypographyMold';
 
 type Props = {
@@ -17,29 +18,38 @@ export function LandGllacrtraillMapSelectionPanel({entry, onClose, onViewDetails
   const landGllacrtraillKindLabel = kindDisplayMap[entry.formationKind];
 
   return (
-    <View style={styles.landGllacrtraillPanel}>
-      <Image source={landGllacrtraillVisual} style={styles.landGllacrtraillThumb} resizeMode="cover" />
-      <View style={styles.landGllacrtraillBody}>
-        <Text style={styles.landGllacrtraillKind}>{landGllacrtraillKindLabel}</Text>
-        <Text style={styles.landGllacrtraillTitle} numberOfLines={2}>
-          {entry.displayLabel}
-        </Text>
-        <Text style={styles.landGllacrtraillBrief} numberOfLines={2}>
-          {entry.briefNarrative}
-        </Text>
-        <Pressable onPress={onViewDetails} style={styles.landGllacrtraillDetailsRow}>
-          <Text style={styles.landGllacrtraillDetailsLabel}>View Details</Text>
-          <Text style={styles.landGllacrtraillDetailsChevron}>›</Text>
-        </Pressable>
+    <LandGllacrtraillFadeInView offset={40} duration={300}>
+      <View style={styles.landGllacrtraillPanel}>
+        <Image
+          source={landGllacrtraillVisual}
+          style={styles.landGllacrtraillThumb}
+          resizeMode="cover"
+        />
+        <View style={styles.landGllacrtraillBody}>
+          <Text style={styles.landGllacrtraillKind}>{landGllacrtraillKindLabel}</Text>
+          <Text style={styles.landGllacrtraillTitle} numberOfLines={2}>
+            {entry.displayLabel}
+          </Text>
+          <Text style={styles.landGllacrtraillBrief} numberOfLines={2}>
+            {entry.briefNarrative}
+          </Text>
+          <LandGllacrtraillScalePressable
+            onPress={onViewDetails}
+            pressScale={0.95}
+            animateStyle={styles.landGllacrtraillDetailsRow}>
+            <Text style={styles.landGllacrtraillDetailsLabel}>View Details</Text>
+            <Text style={styles.landGllacrtraillDetailsChevron}>›</Text>
+          </LandGllacrtraillScalePressable>
+        </View>
+        <LandGllacrtraillScalePressable
+          onPress={onClose}
+          pressScale={0.85}
+          animateStyle={styles.landGllacrtraillCloseBtn}
+          accessibilityLabel="Close">
+          <Text style={styles.landGllacrtraillCloseGlyph}>×</Text>
+        </LandGllacrtraillScalePressable>
       </View>
-      <Pressable
-        onPress={onClose}
-        style={styles.landGllacrtraillCloseBtn}
-        hitSlop={8}
-        accessibilityLabel="Close">
-        <Text style={styles.landGllacrtraillCloseGlyph}>×</Text>
-      </Pressable>
-    </View>
+    </LandGllacrtraillFadeInView>
   );
 }
 
@@ -78,40 +88,40 @@ const styles = StyleSheet.create({
   landGllacrtraillBrief: {
     fontFamily: 'BarlowCondensed-Regular',
     fontSize: 12,
-    lineHeight: 16,
+    lineHeight: 18,
     color: '#7AB3CC',
     marginTop: 2,
   },
   landGllacrtraillDetailsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 8,
     gap: 4,
+    marginTop: 8,
   },
   landGllacrtraillDetailsLabel: {
-    fontFamily: 'BarlowCondensed-Medium',
-    fontSize: 13,
-    lineHeight: 19.5,
-    color: '#3DB8F0',
+    ...typographyMold.linkAction,
   },
   landGllacrtraillDetailsChevron: {
-    fontFamily: 'BarlowCondensed-Medium',
     fontSize: 16,
     color: '#3DB8F0',
     marginTop: -1,
   },
   landGllacrtraillCloseBtn: {
     position: 'absolute',
-    top: 14,
-    right: 16,
-    width: 24,
-    height: 24,
+    top: 12,
+    right: 12,
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: 'rgba(61, 184, 240, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(61, 184, 240, 0.25)',
     alignItems: 'center',
     justifyContent: 'center',
   },
   landGllacrtraillCloseGlyph: {
-    fontSize: 20,
-    lineHeight: 22,
-    color: '#7AB3CC',
+    fontSize: 18,
+    color: '#7AD4F5',
+    marginTop: -1,
   },
 });

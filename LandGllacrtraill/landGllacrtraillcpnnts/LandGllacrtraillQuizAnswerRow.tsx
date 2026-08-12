@@ -1,31 +1,40 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import {LandGllacrtraillFadeInView} from './LandGllacrtraillFadeInView';
 import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 
 type Props = {
+  letter: string;
   label: string;
-  isChecked: boolean;
-  onToggle: () => void;
+  isSelected: boolean;
+  onPress: () => void;
   index?: number;
 };
 
-export function LandGllacrtraillChecklistRow({
+export function LandGllacrtraillQuizAnswerRow({
+  letter,
   label,
-  isChecked,
-  onToggle,
+  isSelected,
+  onPress,
   index = 0,
 }: Props) {
   return (
     <LandGllacrtraillFadeInView index={index}>
       <LandGllacrtraillScalePressable
-        onPress={onToggle}
+        onPress={onPress}
         pressScale={0.97}
-        animateStyle={styles.landGllacrtraillRow}>
-        <View style={[styles.landGllacrtraillCheckbox, isChecked && styles.landGllacrtraillCheckboxChecked]}>
-          {isChecked ? <Text style={styles.landGllacrtraillCheckmark}>✓</Text> : null}
-        </View>
-        <Text style={[styles.label, isChecked && styles.landGllacrtraillLabelChecked]}>
+        animateStyle={[
+          styles.landGllacrtraillRow,
+          isSelected && styles.landGllacrtraillRowSelected,
+        ]}>
+        <Text
+          style={[
+            styles.landGllacrtraillLetter,
+            isSelected && styles.landGllacrtraillLetterSelected,
+          ]}>
+          {letter}
+        </Text>
+        <Text style={[styles.label, isSelected && styles.landGllacrtraillLabelSelected]}>
           {label}
         </Text>
       </LandGllacrtraillScalePressable>
@@ -45,24 +54,26 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(61, 184, 240, 0.12)',
     backgroundColor: 'rgba(61, 184, 240, 0.1)',
   },
-  landGllacrtraillCheckbox: {
-    width: 22,
-    height: 22,
-    borderRadius: 6,
+  landGllacrtraillRowSelected: {
+    borderColor: '#3DB8F0',
+    backgroundColor: 'rgba(61, 184, 240, 0.22)',
+  },
+  landGllacrtraillLetter: {
+    width: 28,
+    height: 28,
+    borderRadius: 8,
     borderWidth: 1.5,
     borderColor: 'rgba(61, 184, 240, 0.3)',
-    alignItems: 'center',
-    justifyContent: 'center',
+    textAlign: 'center',
+    lineHeight: 26,
+    fontFamily: 'BarlowCondensed-SemiBold',
+    fontSize: 14,
+    color: '#7AD4F5',
   },
-  landGllacrtraillCheckboxChecked: {
+  landGllacrtraillLetterSelected: {
     backgroundColor: '#3DB8F0',
     borderColor: '#3DB8F0',
-  },
-  landGllacrtraillCheckmark: {
-    fontSize: 13,
-    fontWeight: '700',
     color: '#060F1E',
-    marginTop: -1,
   },
   label: {
     flex: 1,
@@ -71,8 +82,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: '#E8F4FC',
   },
-  landGllacrtraillLabelChecked: {
+  landGllacrtraillLabelSelected: {
     color: '#7AD4F5',
-    textDecorationLine: 'line-through',
   },
 });

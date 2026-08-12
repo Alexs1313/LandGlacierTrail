@@ -5,6 +5,7 @@ export type MainTabParamList = {
   MapTab: {entryKey?: string} | undefined;
   RevealTab: undefined;
   NotesTab: undefined;
+  QuizTab: undefined;
   SavedTab: undefined;
 };
 

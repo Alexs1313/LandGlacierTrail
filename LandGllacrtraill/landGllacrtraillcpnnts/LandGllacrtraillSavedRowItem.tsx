@@ -1,43 +1,55 @@
 import React from 'react';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import {LandGllacrtraillFadeInView} from './LandGllacrtraillFadeInView';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 import {resolveFormationVisual} from './LandGllacrtraillvisualRegistry';
 import {kindDisplayMap} from './LandGllacrtraillformationCatalog';
 import {FormationEntry} from './LandGllacrtraillentrySchema';
-
 import {typographyMold} from './LandGllacrtrailltypographyMold';
 
 type Props = {
   entry: FormationEntry;
   onPress?: () => void;
   onRemovePress?: () => void;
+  index?: number;
 };
 
-export function LandGllacrtraillSavedRowItem({entry, onPress, onRemovePress}: Props) {
+export function LandGllacrtraillSavedRowItem({
+  entry,
+  onPress,
+  onRemovePress,
+  index = 0,
+}: Props) {
   const source = resolveFormationVisual(entry.visualAssetKey);
   const landGllacrtraillKindLabel = kindDisplayMap[entry.formationKind];
 
   return (
-    <Pressable onPress={onPress} style={styles.landGllacrtraillCard}>
-      <Image source={source} style={styles.landGllacrtraillThumb} />
-      <View style={styles.landGllacrtraillContent}>
-        <Text style={styles.landGllacrtraillKind}>{landGllacrtraillKindLabel}</Text>
-        <Text style={styles.landGllacrtraillTitle} numberOfLines={1}>
-          {entry.displayLabel}
-        </Text>
-        <Text style={styles.landGllacrtraillBrief} numberOfLines={2}>
-          {entry.briefNarrative}
-        </Text>
-        <Pressable
-          onPress={onRemovePress}
-          hitSlop={8}
-          style={styles.landGllacrtraillRemoveRow}
-          accessibilityRole="button"
-          accessibilityLabel={`Remove ${entry.displayLabel}`}>
-          <Text style={styles.landGllacrtraillRemoveIcon}>✕</Text>
-          <Text style={styles.landGllacrtraillRemoveLabel}>Remove</Text>
-        </Pressable>
-      </View>
-    </Pressable>
+    <LandGllacrtraillFadeInView index={index}>
+      <LandGllacrtraillScalePressable
+        onPress={onPress}
+        pressScale={0.97}
+        animateStyle={styles.landGllacrtraillCard}>
+        <Image source={source} style={styles.landGllacrtraillThumb} />
+        <View style={styles.landGllacrtraillContent}>
+          <Text style={styles.landGllacrtraillKind}>{landGllacrtraillKindLabel}</Text>
+          <Text style={styles.landGllacrtraillTitle} numberOfLines={1}>
+            {entry.displayLabel}
+          </Text>
+          <Text style={styles.landGllacrtraillBrief} numberOfLines={2}>
+            {entry.briefNarrative}
+          </Text>
+          <LandGllacrtraillScalePressable
+            onPress={onRemovePress}
+            pressScale={0.9}
+            animateStyle={styles.landGllacrtraillRemoveRow}
+            accessibilityRole="button"
+            accessibilityLabel={`Remove ${entry.displayLabel}`}>
+            <Text style={styles.landGllacrtraillRemoveIcon}>✕</Text>
+            <Text style={styles.landGllacrtraillRemoveLabel}>Remove</Text>
+          </LandGllacrtraillScalePressable>
+        </View>
+      </LandGllacrtraillScalePressable>
+    </LandGllacrtraillFadeInView>
   );
 }
 

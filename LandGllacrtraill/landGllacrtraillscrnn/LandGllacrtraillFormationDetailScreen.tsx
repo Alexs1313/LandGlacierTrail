@@ -2,7 +2,6 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {
   ImageBackground,
   Platform,
-  Pressable,
   ScrollView,
   Share,
   StyleSheet,
@@ -11,6 +10,8 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import type {StackScreenProps} from '@react-navigation/stack';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
+import {LandGllacrtraillScalePressable} from '../landGllacrtraillcpnnts/LandGllacrtraillScalePressable';
 import {resolveFormationVisual} from '../landGllacrtraillcpnnts/LandGllacrtraillvisualRegistry';
 import {LandGllacrtraillAssessmentBadge} from '../landGllacrtraillcpnnts/LandGllacrtraillAssessmentBadge';
 import {LandGllacrtraillGhostActionControl} from '../landGllacrtraillcpnnts/LandGllacrtraillGhostActionControl';
@@ -26,10 +27,11 @@ import {
   toggleSelectedItem,
 } from '../landGllacrtraillcpnnts/LandGllacrtraillpersistenceGate';
 import {LandGllacrtraillopenMapLocation} from '../landGllacrtraillroutts/LandGllacrtraillopenMapLocation';
+import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
+
 type FormationDetailRouteParams = {
   FormationDetail: {entryKey: string};
 };
-import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
 
 type Props = StackScreenProps<FormationDetailRouteParams, 'FormationDetail'>;
 
@@ -55,9 +57,9 @@ export function LandGllacrtraillFormationDetailScreen({
   if (!landGllacrtraillEntry) {
     return (
       <View style={styles.landGllacrtraillMissing}>
-        <Pressable onPress={() => navigation.goBack()}>
+        <LandGllacrtraillScalePressable onPress={() => navigation.goBack()}>
           <Text style={styles.landGllacrtraillBackLabel}>← Back</Text>
-        </Pressable>
+        </LandGllacrtraillScalePressable>
       </View>
     );
   }
@@ -100,9 +102,10 @@ export function LandGllacrtraillFormationDetailScreen({
               style={StyleSheet.absoluteFill}
             />
             <View style={styles.landGllacrtraillHeroControls}>
-              <Pressable
+              <LandGllacrtraillScalePressable
                 onPress={() => navigation.goBack()}
-                style={styles.landGllacrtraillRoundControl}>
+                pressScale={0.85}
+                animateStyle={styles.landGllacrtraillRoundControl}>
                 <Text
                   style={[
                     styles.landGllacrtraillRoundControlIcon,
@@ -110,10 +113,11 @@ export function LandGllacrtraillFormationDetailScreen({
                   ]}>
                   ←
                 </Text>
-              </Pressable>
-              <Pressable
+              </LandGllacrtraillScalePressable>
+              <LandGllacrtraillScalePressable
                 onPress={landGllacrtraillHandleMark}
-                style={styles.landGllacrtraillRoundControl}>
+                pressScale={0.85}
+                animateStyle={styles.landGllacrtraillRoundControl}>
                 <Text
                   style={[
                     styles.landGllacrtraillRoundControlIcon,
@@ -122,7 +126,7 @@ export function LandGllacrtraillFormationDetailScreen({
                   ]}>
                   {isMarked ? '★' : '☆'}
                 </Text>
-              </Pressable>
+              </LandGllacrtraillScalePressable>
             </View>
             <View style={styles.landGllacrtraillHeroKind}>
               <Text style={styles.landGllacrtraillHeroKindText}>
@@ -132,7 +136,7 @@ export function LandGllacrtraillFormationDetailScreen({
           </ImageBackground>
         </View>
 
-        <View style={styles.landGllacrtraillBody}>
+        <LandGllacrtraillFadeInView delay={200} style={styles.landGllacrtraillBody}>
           <LandGllacrtraillPrimaryActionControl
             variant="map"
             label="VIEW ON MAP"
@@ -195,7 +199,7 @@ export function LandGllacrtraillFormationDetailScreen({
               onPress={landGllacrtraillHandleShare}
             />
           </View>
-        </View>
+        </LandGllacrtraillFadeInView>
       </ScrollView>
     </View>
   );

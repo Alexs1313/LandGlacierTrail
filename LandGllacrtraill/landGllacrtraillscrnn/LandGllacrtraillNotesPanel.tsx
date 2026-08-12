@@ -5,6 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import {LandGllacrtraillArticleGuideCard} from '../landGllacrtraillcpnnts/LandGllacrtraillArticleGuideCard';
 import {LandGllacrtraillChecklistRow} from '../landGllacrtraillcpnnts/LandGllacrtraillChecklistRow';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
 import {LandGllacrtraillGuideSegmentTabs} from '../landGllacrtraillcpnnts/LandGllacrtraillGuideSegmentTabs';
 import {LandGllacrtraillSafetyGuideCard} from '../landGllacrtraillcpnnts/LandGllacrtraillSafetyGuideCard';
 import {
@@ -17,6 +18,7 @@ import {
   readChecklistPacked,
   toggleChecklistItem,
 } from '../landGllacrtraillcpnnts/LandGllacrtraillpersistenceGate';
+import {useArticleBookmarks} from '../landGllacrtraillcpnnts/LandGllacrtrailluseArticleBookmarks';
 import type {RootStackParamList} from '../landGllacrtraillroutts/LandGllacrtrailltypes';
 import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
 import type {GuideSegment} from '../landGllacrtraillcpnnts/LandGllacrtraillguideSchema';
@@ -24,6 +26,7 @@ import type {GuideSegment} from '../landGllacrtraillcpnnts/LandGllacrtraillguide
 export function LandGllacrtraillNotesPanel() {
   const landGllacrtraillStackNavigation =
     useNavigation<StackNavigationProp<RootStackParamList>>();
+  const {isArticleSaved} = useArticleBookmarks();
   const [activeSegment, setActiveSegment] = useState<GuideSegment>('articles');
   const [packedKeys, setPackedKeys] = useState<string[]>([]);
 
@@ -52,26 +55,40 @@ export function LandGllacrtraillNotesPanel() {
     [],
   );
 
+  const landGllacrtraillChecklistItems = useMemo(
+    () =>
+      checklistSections.flatMap(section =>
+        section.items.map(item => ({...item, sectionKey: section.sectionKey})),
+      ),
+    [],
+  );
+
   return (
     <View style={styles.landGllacrtraillRoot}>
       <ScrollView
         style={styles.landGllacrtraillScroll}
         contentContainerStyle={styles.landGllacrtraillScrollContent}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.landGllacrtraillEyebrow}>EXPEDITION GUIDE</Text>
-        <Text style={styles.landGllacrtraillPageTitle}>Notes</Text>
+        <LandGllacrtraillFadeInView>
+          <Text style={styles.landGllacrtraillEyebrow}>EXPEDITION GUIDE</Text>
+          <Text style={styles.landGllacrtraillPageTitle}>Notes</Text>
+        </LandGllacrtraillFadeInView>
 
-        <LandGllacrtraillGuideSegmentTabs
-          activeSegment={activeSegment}
-          onChange={setActiveSegment}
-        />
+        <LandGllacrtraillFadeInView index={1}>
+          <LandGllacrtraillGuideSegmentTabs
+            activeSegment={activeSegment}
+            onChange={setActiveSegment}
+          />
+        </LandGllacrtraillFadeInView>
 
         {activeSegment === 'articles' ? (
-          <View style={styles.landGllacrtraillListGap}>
-            {guideArticles.map(article => (
+          <View key="articles" style={styles.landGllacrtraillListGap}>
+            {guideArticles.map((article, idx) => (
               <LandGllacrtraillArticleGuideCard
                 key={article.articleKey}
                 article={article}
+                isSaved={isArticleSaved(article.articleKey)}
+                index={idx}
                 onPress={() =>
                   landGllacrtraillStackNavigation.navigate('GuideArticle', {
                     articleKey: article.articleKey,
@@ -83,12 +100,17 @@ export function LandGllacrtraillNotesPanel() {
         ) : null}
 
         {activeSegment === 'safety' ? (
-          <View style={styles.landGllacrtraillListGap}>
-            <Text style={styles.landGllacrtraillSafetyIntro}>{landGllacrtraillSafetyIntro}</Text>
-            {guideSafetyNotes.map(note => (
+          <View key="safety" style={styles.landGllacrtraillListGap}>
+            <LandGllacrtraillFadeInView index={0}>
+              <Text style={styles.landGllacrtraillSafetyIntro}>
+                {landGllacrtraillSafetyIntro}
+              </Text>
+            </LandGllacrtraillFadeInView>
+            {guideSafetyNotes.map((note, idx) => (
               <LandGllacrtraillSafetyGuideCard
                 key={note.safetyKey}
                 note={note}
+                index={idx + 1}
                 onPress={() =>
                   landGllacrtraillStackNavigation.navigate('GuideSafety', {
                     safetyKey: note.safetyKey,
@@ -100,33 +122,44 @@ export function LandGllacrtraillNotesPanel() {
         ) : null}
 
         {activeSegment === 'checklist' ? (
-          <View style={styles.landGllacrtraillListGap}>
-            <View style={styles.landGllacrtraillProgressBlock}>
+          <View key="checklist" style={styles.landGllacrtraillListGap}>
+            <LandGllacrtraillFadeInView index={0} style={styles.landGllacrtraillProgressBlock}>
               <View style={styles.landGllacrtraillProgressLabels}>
                 <Text style={styles.landGllacrtraillProgressCount}>
                   {landGllacrtraillPackedCount} of {checklistItemCount} packed
                 </Text>
-                <Text style={styles.landGllacrtraillProgressPercent}>{landGllacrtraillProgressPercent}%</Text>
+                <Text style={styles.landGllacrtraillProgressPercent}>
+                  {landGllacrtraillProgressPercent}%
+                </Text>
               </View>
               <View style={styles.landGllacrtraillProgressTrack}>
                 <View
-                  style={[styles.landGllacrtraillProgressFill, {width: `${landGllacrtraillProgressPercent}%`}]}
+                  style={[
+                    styles.landGllacrtraillProgressFill,
+                    {width: `${landGllacrtraillProgressPercent}%`},
+                  ]}
                 />
               </View>
-            </View>
+            </LandGllacrtraillFadeInView>
 
             {checklistSections.map(section => (
               <View key={section.sectionKey} style={styles.landGllacrtraillSectionBlock}>
                 <Text style={styles.landGllacrtraillSectionLabel}>{section.sectionLabel}</Text>
                 <View style={styles.landGllacrtraillSectionItems}>
-                  {section.items.map(item => (
-                    <LandGllacrtraillChecklistRow
-                      key={item.itemKey}
-                      label={item.label}
-                      isChecked={packedKeys.includes(item.itemKey)}
-                      onToggle={() => landGllacrtraillHandleToggleItem(item.itemKey)}
-                    />
-                  ))}
+                  {section.items.map(item => {
+                    const landGllacrtraillItemIndex = landGllacrtraillChecklistItems.findIndex(
+                      checklistItem => checklistItem.itemKey === item.itemKey,
+                    );
+                    return (
+                      <LandGllacrtraillChecklistRow
+                        key={item.itemKey}
+                        label={item.label}
+                        index={landGllacrtraillItemIndex + 1}
+                        isChecked={packedKeys.includes(item.itemKey)}
+                        onToggle={() => landGllacrtraillHandleToggleItem(item.itemKey)}
+                      />
+                    );
+                  })}
                 </View>
               </View>
             ))}

@@ -1,9 +1,10 @@
 import React from 'react';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import {LandGllacrtraillFadeInView} from './LandGllacrtraillFadeInView';
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 import {resolveFormationVisual} from './LandGllacrtraillvisualRegistry';
 import {kindDisplayMap} from './LandGllacrtraillformationCatalog';
 import {FormationEntry} from './LandGllacrtraillentrySchema';
-
 import {typographyMold} from './LandGllacrtrailltypographyMold';
 import {LandGllacrtraillAssessmentBadge} from './LandGllacrtraillAssessmentBadge';
 
@@ -12,6 +13,7 @@ type Props = {
   isMarked?: boolean;
   onPress?: () => void;
   onMarkPress?: () => void;
+  index?: number;
 };
 
 export function LandGllacrtraillLocationRowItem({
@@ -19,33 +21,45 @@ export function LandGllacrtraillLocationRowItem({
   isMarked,
   onPress,
   onMarkPress,
+  index = 0,
 }: Props) {
   const source = resolveFormationVisual(entry.visualAssetKey);
   const landGllacrtraillKindLabel = kindDisplayMap[entry.formationKind];
 
   return (
-    <Pressable onPress={onPress} style={styles.landGllacrtraillCard}>
-      <Image source={source} style={styles.landGllacrtraillThumb} />
-      <View style={styles.landGllacrtraillContent}>
-        <View style={styles.landGllacrtraillTopRow}>
-          <View style={styles.landGllacrtraillKindBadge}>
-            <Text style={styles.landGllacrtraillKindText}>{landGllacrtraillKindLabel}</Text>
+    <LandGllacrtraillFadeInView index={index}>
+      <LandGllacrtraillScalePressable
+        onPress={onPress}
+        pressScale={0.97}
+        animateStyle={styles.landGllacrtraillCard}>
+        <Image source={source} style={styles.landGllacrtraillThumb} />
+        <View style={styles.landGllacrtraillContent}>
+          <View style={styles.landGllacrtraillTopRow}>
+            <View style={styles.landGllacrtraillKindBadge}>
+              <Text style={styles.landGllacrtraillKindText}>
+                {landGllacrtraillKindLabel}
+              </Text>
+            </View>
+            <LandGllacrtraillScalePressable onPress={onMarkPress} pressScale={0.85}>
+              <Text
+                style={[
+                  styles.landGllacrtraillMarkIcon,
+                  isMarked && styles.landGllacrtraillMarkIconActive,
+                ]}>
+                {isMarked ? '★' : '☆'}
+              </Text>
+            </LandGllacrtraillScalePressable>
           </View>
-          <Pressable onPress={onMarkPress} hitSlop={12}>
-            <Text style={[styles.landGllacrtraillMarkIcon, isMarked && styles.landGllacrtraillMarkIconActive]}>
-              {isMarked ? '★' : '☆'}
-            </Text>
-          </Pressable>
+          <Text style={styles.landGllacrtraillTitle} numberOfLines={1}>
+            {entry.displayLabel}
+          </Text>
+          <Text style={styles.landGllacrtraillBrief} numberOfLines={2}>
+            {entry.briefNarrative}
+          </Text>
+          <LandGllacrtraillAssessmentBadge value={entry.assessmentValue} />
         </View>
-        <Text style={styles.landGllacrtraillTitle} numberOfLines={1}>
-          {entry.displayLabel}
-        </Text>
-        <Text style={styles.landGllacrtraillBrief} numberOfLines={2}>
-          {entry.briefNarrative}
-        </Text>
-        <LandGllacrtraillAssessmentBadge value={entry.assessmentValue} />
-      </View>
-    </Pressable>
+      </LandGllacrtraillScalePressable>
+    </LandGllacrtraillFadeInView>
   );
 }
 

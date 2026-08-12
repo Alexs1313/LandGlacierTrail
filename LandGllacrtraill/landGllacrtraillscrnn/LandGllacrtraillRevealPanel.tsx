@@ -9,6 +9,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
 import {atmosphereBackdrop} from '../landGllacrtraillcpnnts/LandGllacrtraillvisualRegistry';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
 import {LandGllacrtraillGhostActionControl} from '../landGllacrtraillcpnnts/LandGllacrtraillGhostActionControl';
 import {LandGllacrtraillPrimaryActionControl} from '../landGllacrtraillcpnnts/LandGllacrtraillPrimaryActionControl';
 import {LandGllacrtraillRevealResultCard} from '../landGllacrtraillcpnnts/LandGllacrtraillRevealResultCard';
@@ -71,11 +72,16 @@ export function LandGllacrtraillRevealPanel() {
         style={styles.landGllacrtraillScroll}
         contentContainerStyle={styles.landGllacrtraillContent}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.landGllacrtraillEyebrow}>GLACIER DISCOVERY</Text>
-        <Text style={styles.landGllacrtraillTitle}>Ice Reveal</Text>
+        <LandGllacrtraillFadeInView>
+          <Text style={styles.landGllacrtraillEyebrow}>GLACIER DISCOVERY</Text>
+          <Text style={styles.landGllacrtraillTitle}>Ice Reveal</Text>
+        </LandGllacrtraillFadeInView>
 
         {revealedLocation ? (
-          <View style={styles.landGllacrtraillResult}>
+          <LandGllacrtraillFadeInView
+            key={revealedLocation.entryKey}
+            index={1}
+            style={styles.landGllacrtraillResult}>
             <LandGllacrtraillRevealResultCard entry={revealedLocation} />
             <LandGllacrtraillPrimaryActionControl
               variant="map"
@@ -96,9 +102,9 @@ export function LandGllacrtraillRevealPanel() {
                 onPress={landGllacrtraillRevealNext}
               />
             </View>
-          </View>
+          </LandGllacrtraillFadeInView>
         ) : (
-          <View style={styles.landGllacrtraillIntro}>
+          <LandGllacrtraillFadeInView index={1} style={styles.landGllacrtraillIntro}>
             <View style={styles.landGllacrtraillSnowOrb}>
               <View style={styles.landGllacrtraillSnowOrbHighlight} />
               <Text style={styles.landGllacrtraillSnowOrbIcon}>❄</Text>
@@ -117,7 +123,7 @@ export function LandGllacrtraillRevealPanel() {
               onPress={landGllacrtraillRevealNext}
               style={styles.landGllacrtraillRevealButton}
             />
-          </View>
+          </LandGllacrtraillFadeInView>
         )}
       </ScrollView>
     </View>

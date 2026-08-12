@@ -7,6 +7,7 @@ import {LandGllacrtraillExploreScreen} from '../landGllacrtraillscrnn/LandGllacr
 import {LandGllacrtraillMapPanel} from '../landGllacrtraillscrnn/LandGllacrtraillMapPanel';
 import {LandGllacrtraillRevealPanel} from '../landGllacrtraillscrnn/LandGllacrtraillRevealPanel';
 import {LandGllacrtraillNotesPanel} from '../landGllacrtraillscrnn/LandGllacrtraillNotesPanel';
+import {LandGllacrtraillQuizPanel} from '../landGllacrtraillscrnn/LandGllacrtraillQuizPanel';
 import {LandGllacrtraillSavedScreen} from '../landGllacrtraillscrnn/LandGllacrtraillSavedScreen';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -20,6 +21,7 @@ export function LandGllacrtraillMainTabNavigator() {
       <Tab.Screen name="MapTab" component={LandGllacrtraillMapPanel} />
       <Tab.Screen name="RevealTab" component={LandGllacrtraillRevealPanel} />
       <Tab.Screen name="NotesTab" component={LandGllacrtraillNotesPanel} />
+      <Tab.Screen name="QuizTab" component={LandGllacrtraillQuizPanel} />
       <Tab.Screen name="SavedTab" component={LandGllacrtraillSavedScreen} />
     </Tab.Navigator>
   );

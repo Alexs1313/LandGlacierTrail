@@ -1,13 +1,8 @@
 import React from 'react';
-import {
-  Platform,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Platform, ScrollView, StyleSheet, Text, View} from 'react-native';
 import type {StackScreenProps} from '@react-navigation/stack';
+import {LandGllacrtraillFadeInView} from '../landGllacrtraillcpnnts/LandGllacrtraillFadeInView';
+import {LandGllacrtraillScalePressable} from '../landGllacrtraillcpnnts/LandGllacrtraillScalePressable';
 import {resolveSafetyByKey} from '../landGllacrtraillcpnnts/LandGllacrtraillguideCatalog';
 import type {RootStackParamList} from '../landGllacrtraillroutts/LandGllacrtrailltypes';
 import {typographyMold} from '../landGllacrtraillcpnnts/LandGllacrtrailltypographyMold';
@@ -20,9 +15,9 @@ export function LandGllacrtraillGuideSafetyScreen({navigation, route}: Props) {
   if (!landGllacrtraillNote) {
     return (
       <View style={styles.landGllacrtraillMissing}>
-        <Pressable onPress={() => navigation.goBack()}>
+        <LandGllacrtraillScalePressable onPress={() => navigation.goBack()}>
           <Text style={styles.landGllacrtraillBackLabel}>← Back</Text>
-        </Pressable>
+        </LandGllacrtraillScalePressable>
       </View>
     );
   }
@@ -35,9 +30,10 @@ export function LandGllacrtraillGuideSafetyScreen({navigation, route}: Props) {
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.landGllacrtraillScrollContent}>
-        <Pressable
+        <LandGllacrtraillScalePressable
           onPress={() => navigation.goBack()}
-          style={styles.landGllacrtraillRoundControl}>
+          pressScale={0.85}
+          animateStyle={styles.landGllacrtraillRoundControl}>
           <Text
             style={[
               styles.landGllacrtraillRoundControlIcon,
@@ -45,27 +41,29 @@ export function LandGllacrtraillGuideSafetyScreen({navigation, route}: Props) {
             ]}>
             ←
           </Text>
-        </Pressable>
+        </LandGllacrtraillScalePressable>
 
-        <View style={styles.landGllacrtraillSafetyHeader}>
-          <View style={styles.landGllacrtraillShieldWrap}>
-            <Text style={styles.landGllacrtraillShield}>🛡</Text>
+        <LandGllacrtraillFadeInView delay={150}>
+          <View style={styles.landGllacrtraillSafetyHeader}>
+            <View style={styles.landGllacrtraillShieldWrap}>
+              <Text style={styles.landGllacrtraillShield}>🛡</Text>
+            </View>
+            <Text style={styles.landGllacrtraillSafetyLabel}>
+              SAFETY INFORMATION
+            </Text>
           </View>
-          <Text style={styles.landGllacrtraillSafetyLabel}>
-            SAFETY INFORMATION
-          </Text>
-        </View>
 
-        <Text style={styles.landGllacrtraillTitle}>
-          {landGllacrtraillNote.title}
-        </Text>
-        <View style={styles.landGllacrtraillDivider} />
-
-        {landGllacrtraillParagraphs.map((paragraph, index) => (
-          <Text key={index} style={styles.landGllacrtraillParagraph}>
-            {paragraph}
+          <Text style={styles.landGllacrtraillTitle}>
+            {landGllacrtraillNote.title}
           </Text>
-        ))}
+          <View style={styles.landGllacrtraillDivider} />
+
+          {landGllacrtraillParagraphs.map((paragraph, index) => (
+            <Text key={index} style={styles.landGllacrtraillParagraph}>
+              {paragraph}
+            </Text>
+          ))}
+        </LandGllacrtraillFadeInView>
       </ScrollView>
     </View>
   );
@@ -144,5 +142,6 @@ const styles = StyleSheet.create({
   },
   landGllacrtraillParagraph: {
     ...typographyMold.bodyNarrative,
+    marginBottom: 12,
   },
 });

@@ -35,6 +35,14 @@ export const onboardPhases: OnboardingPhase[] = [
     actionLabel: 'CONTINUE',
   },
   {
+    phaseKey: 'quiz',
+    headline: 'Test Your Ice IQ',
+    bodyCopy:
+      'Take the Ice Quiz — 10 questions about glaciers, ice caves, and expedition safety. See how well you know the frozen trail.',
+    visualAsset: onboardVisuals.discover,
+    actionLabel: 'CONTINUE',
+  },
+  {
     phaseKey: 'archive',
     headline: 'Save & Take Notes',
     bodyCopy:

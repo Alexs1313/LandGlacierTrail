@@ -1,7 +1,7 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {GuideSegment} from './LandGllacrtraillguideSchema';
-
+import {LandGllacrtraillScalePressable} from './LandGllacrtraillScalePressable';
 
 type Props = {
   activeSegment: GuideSegment;
@@ -20,14 +20,26 @@ export function LandGllacrtraillGuideSegmentTabs({activeSegment, onChange}: Prop
       {landGllacrtraillSegments.map(seg => {
         const landGllacrtraillIsActive = activeSegment === seg.key;
         return (
-          <Pressable
+          <LandGllacrtraillScalePressable
             key={seg.key}
             onPress={() => onChange(seg.key)}
-            style={[styles.landGllacrtraillTab, landGllacrtraillIsActive && styles.landGllacrtraillTabActive]}>
-            <Text style={[styles.label, landGllacrtraillIsActive && styles.landGllacrtraillLabelActive]}>
+            pressScale={0.92}
+            style={styles.landGllacrtraillTabPressable}
+            animateStyle={[
+              styles.landGllacrtraillTab,
+              landGllacrtraillIsActive && styles.landGllacrtraillTabActive,
+            ]}>
+            <Text
+              numberOfLines={1}
+              adjustsFontSizeToFit
+              minimumFontScale={0.85}
+              style={[
+                styles.label,
+                landGllacrtraillIsActive && styles.landGllacrtraillLabelActive,
+              ]}>
               {seg.label}
             </Text>
-          </Pressable>
+          </LandGllacrtraillScalePressable>
         );
       })}
     </View>
@@ -44,11 +56,17 @@ const styles = StyleSheet.create({
     padding: 5,
     gap: 0,
   },
-  landGllacrtraillTab: {
+  landGllacrtraillTabPressable: {
     flex: 1,
+    flexBasis: 0,
+    minWidth: 0,
+  },
+  landGllacrtraillTab: {
+    alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 8,
+    paddingHorizontal: 4,
     borderRadius: 10,
   },
   landGllacrtraillTabActive: {
@@ -59,6 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     letterSpacing: 0.52,
     color: '#7AB3CC',
+    textAlign: 'center',
   },
   landGllacrtraillLabelActive: {
     fontFamily: 'BarlowCondensed-SemiBold',
